@@ -1,0 +1,121 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 9: 08 NEXT STEPS ================= -->
+<section class="page page-9">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">08</div>
+      <div>
+        <h2 class="section-main-heading">NEXT STEPS</h2>
+        <p class="section-sub-heading">Let's discuss how we can help you grow.</p>
+      </div>
+    </div>
+
+    <!-- Hero Mountain Summit Card -->
+    <div class="next-steps-hero-card" {% if mountain_summit_base64 %}style="background-image: linear-gradient(135deg, rgba(11, 27, 61, 0.88) 0%, rgba(15, 23, 42, 0.82) 100%), url('{{ mountain_summit_base64 }}');"{% endif %}>
+      <!-- Geometric Hexagon Accents -->
+      <div class="hero-geo-accent hex-top"></div>
+      <div class="hero-geo-accent tri-bottom"></div>
+
+      <div class="hero-cta-content">
+        <h2 class="hero-cta-heading">Ready to unlock your full potential?</h2>
+        <p class="hero-cta-subheading">
+          We'd love to show you a personalized demo of how we can help you generate more enquiries and grow your business.
+        </p>
+        <div class="hero-cta-btn-wrap">
+          <a class="hero-cta-button" href="https://wa.me/919170000488?text=Hi%20OneHive%2C%20I%20reviewed%20the%20Digital%20Presence%20Intelligence%20Report%20for%20{{ identity.business_name|urlencode }}%20and%20would%20like%20to%20schedule%20a%20free%20consultation." target="_blank">
+            <span class="cta-arrow">&rarr;</span> Schedule a Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Capability Cards in a 4-Column Row -->
+    <div class="next-steps-capabilities-grid">
+      <div class="capability-col-card">
+        <div class="cap-icon-box">
+          {{ svg_icon('laptop') }}
+        </div>
+        <h4 class="cap-title">Website Development</h4>
+        <p class="cap-desc">Fast, modern, mobile-optimized websites built to convert visitors into clients.</p>
+      </div>
+
+      <div class="capability-col-card">
+        <div class="cap-icon-box">
+          {{ svg_icon('bot') }}
+        </div>
+        <h4 class="cap-title">AI Automation</h4>
+        <p class="cap-desc">Smart chatbots and automated follow-ups so you never miss an enquiry.</p>
+      </div>
+
+      <div class="capability-col-card">
+        <div class="cap-icon-box">
+          {{ svg_icon('paperplane') }}
+        </div>
+        <h4 class="cap-title">Digital Marketing</h4>
+        <p class="cap-desc">Targeted local SEO and presence management to attract high-intent leads.</p>
+      </div>
+
+      <div class="capability-col-card">
+        <div class="cap-icon-box">
+          {{ svg_icon('support') }}
+        </div>
+        <h4 class="cap-title">Ongoing Support</h4>
+        <p class="cap-desc">Continuous technical updates, security maintenance, and monthly growth reviews.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Contact Block -->
+    <div class="next-steps-contact-box">
+      <div class="contact-box-left">
+        <div class="contact-brand-row">
+          {% if logo_base64 %}
+            <img src="{{ logo_base64 }}" alt="OneHive" class="contact-logo-img">
+          {% endif %}
+          <div class="contact-brand-name">OneHive Technologies</div>
+        </div>
+        <div class="contact-brand-tagline">Better Presence. Bigger Possibilities.</div>
+      </div>
+
+      <div class="contact-box-middle">
+        <div class="contact-info-row">
+          <span class="ci-icon">{{ svg_icon('phone') }}</span>
+          <span class="ci-val">+91 91700 00488</span>
+        </div>
+        <div class="contact-info-row">
+          <span class="ci-icon">{{ svg_icon('mail') }}</span>
+          <span class="ci-val">hello@onehive.in</span>
+        </div>
+        <div class="contact-info-row">
+          <span class="ci-icon">{{ svg_icon('globe') }}</span>
+          <span class="ci-val">www.onehive.in</span>
+        </div>
+      </div>
+
+      <div class="contact-box-right">
+        <div class="contact-social-label">Connect with us</div>
+        <div class="contact-social-icons">
+          <a class="social-icon-circle" href="https://linkedin.com/company/onehive" target="_blank">{{ svg_icon('linkedin') }}</a>
+          <a class="social-icon-circle" href="https://instagram.com/onehive" target="_blank">{{ svg_icon('instagram') }}</a>
+          <a class="social-icon-circle" href="https://youtube.com/@onehive" target="_blank">{{ svg_icon('youtube') }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 9</div>
+  </footer>
+</section>

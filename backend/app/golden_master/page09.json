@@ -1,0 +1,49 @@
+{
+  "page": 9,
+  "name": "Next Steps",
+  "section_number": "08",
+  "title": "Next Steps",
+  "subtitle": "Let's discuss how we can help you grow.",
+  "components": {
+    "hero_cta": {
+      "background": "mountain_summit",
+      "headline": "Ready to unlock your full potential?",
+      "subline": "We'd love to show you a personalized demo of how we can help you generate more enquiries and grow your business.",
+      "cta_button": "\u2192 Schedule a Free Consultation",
+      "accents": [
+        "hexagon_top_right",
+        "triangle_bottom_right"
+      ]
+    },
+    "service_cards": [
+      {
+        "title": "Website Development",
+        "icon": "laptop"
+      },
+      {
+        "title": "AI Automation",
+        "icon": "bot"
+      },
+      {
+        "title": "Digital Marketing",
+        "icon": "paperplane"
+      },
+      {
+        "title": "Ongoing Support",
+        "icon": "support"
+      }
+    ],
+    "contact_block": {
+      "logo": "OneHive Technologies",
+      "tagline": "Better Presence. Bigger Possibilities.",
+      "phone": "+91 98765 43210",
+      "email": "hello@onehive.in",
+      "website": "www.onehive.in",
+      "socials": [
+        "linkedin",
+        "instagram",
+        "youtube"
+      ]
+    }
+  }
+}

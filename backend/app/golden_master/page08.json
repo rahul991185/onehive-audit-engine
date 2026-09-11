@@ -1,0 +1,53 @@
+{
+  "page": 8,
+  "name": "Recommended Solution",
+  "section_number": "07",
+  "title": "Recommended Solution",
+  "subtitle": "Our suggested 30-day improvement plan.",
+  "components": {
+    "recommendation_list": [
+      {
+        "num": "01",
+        "color": "blue",
+        "title": "Digital Foundation",
+        "desc": "Professional, mobile-first website with your portfolio, services and testimonials."
+      },
+      {
+        "num": "02",
+        "color": "cyan",
+        "title": "Conversion",
+        "desc": "WhatsApp integration, enquiry forms and appointment booking."
+      },
+      {
+        "num": "03",
+        "color": "magenta",
+        "title": "Trust",
+        "desc": "Showcase testimonials, project gallery and credentials."
+      },
+      {
+        "num": "04",
+        "color": "green",
+        "title": "Discovery",
+        "desc": "Local SEO optimization to improve search visibility."
+      },
+      {
+        "num": "05",
+        "color": "skyblue",
+        "title": "AI Assistant",
+        "desc": "AI-powered chatbot for instant customer support and lead capture."
+      },
+      {
+        "num": "06",
+        "color": "purple",
+        "title": "Follow-up",
+        "desc": "Automated follow-up system to convert more enquiries into clients."
+      }
+    ],
+    "bottom_card": {
+      "icon": "rocket",
+      "color": "yellow",
+      "title": "Recommended Priority",
+      "text": "Start with 01 (Digital Foundation) + 02 (Conversion) for the biggest and fastest impact."
+    }
+  }
+}

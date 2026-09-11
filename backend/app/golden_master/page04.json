@@ -1,0 +1,46 @@
+{
+  "page": 4,
+  "name": "Detailed Scorecard",
+  "section_number": "03",
+  "title": "Detailed Scorecard",
+  "subtitle": "Your performance across key digital areas.",
+  "components": {
+    "dimensions": [
+      {
+        "name": "Discoverability",
+        "icon": "search",
+        "subtitle": "How easily people can find you online"
+      },
+      {
+        "name": "Brand & Identity",
+        "icon": "badge",
+        "subtitle": "Visual branding and consistency"
+      },
+      {
+        "name": "Trust & Reputation",
+        "icon": "shield",
+        "subtitle": "Reviews, testimonials and credibility"
+      },
+      {
+        "name": "Website",
+        "icon": "laptop",
+        "subtitle": "Design, content and user experience"
+      },
+      {
+        "name": "Lead Conversion",
+        "icon": "funnel",
+        "subtitle": "Enquiry forms, WhatsApp, call-to-action"
+      },
+      {
+        "name": "Social Media Presence",
+        "icon": "users",
+        "subtitle": "Activity, content and engagement"
+      }
+    ],
+    "bottom_card": {
+      "type": "insight",
+      "icon": "lightbulb",
+      "highlight_text": "Your trust and social media presence are strong, but your website and lead conversion are holding you back."
+    }
+  }
+}

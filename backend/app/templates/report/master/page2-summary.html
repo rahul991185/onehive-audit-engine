@@ -1,0 +1,134 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 2: 01 EXECUTIVE SUMMARY ================= -->
+<section class="page page-2">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">01</div>
+      <div>
+        <h2 class="section-main-heading">EXECUTIVE SUMMARY</h2>
+        <p class="section-sub-heading">A quick overview of your digital presence and key insights.</p>
+      </div>
+    </div>
+
+    <!-- Top Row: Score Gauge + Key Takeaways -->
+    <div class="summary-top-grid">
+      <!-- Circular Score Ring Card -->
+      <div class="summary-gauge-card">
+        <div class="radial-gauge-wrapper">
+          <svg class="radial-gauge-svg" viewBox="0 0 160 160">
+            <circle class="gauge-bg-circle" cx="80" cy="80" r="64" />
+            <circle class="gauge-progress-circle" cx="80" cy="80" r="64"
+              stroke-dasharray="402"
+              stroke-dashoffset="{{ 402 - (402 * scores.overall_score / 100) }}" />
+          </svg>
+          <div class="gauge-score-overlay">
+            <div class="gauge-score-number">{{ scores.overall_score }}</div>
+            <div class="gauge-score-denom">/ 100</div>
+          </div>
+        </div>
+        <div class="gauge-title-label">OVERALL DIGITAL PRESENCE SCORE</div>
+        <div class="gauge-maturity-pill">{{ scores.maturity_band or 'Moderate Presence' }}</div>
+      </div>
+
+      <!-- Key Takeaways Card with 4 Color-Coded Badges -->
+      <div class="key-takeaways-card">
+        <div class="takeaways-header-title">Key Takeaways</div>
+        <div class="takeaways-list">
+          <div class="takeaway-row green">
+            <div class="takeaway-icon-box green">{{ svg_icon('star') }}</div>
+            <div class="takeaway-text">
+              <strong>Strong Customer Reputation:</strong> Positive reviews and verified word-of-mouth client trust.
+            </div>
+          </div>
+          <div class="takeaway-row blue">
+            <div class="takeaway-icon-box blue">{{ svg_icon('gallery') }}</div>
+            <div class="takeaway-text">
+              <strong>Impressive Visual Portfolio:</strong> Real work and visual demonstrations on public profiles.
+            </div>
+          </div>
+          <div class="takeaway-row yellow">
+            <div class="takeaway-icon-box yellow">{{ svg_icon('laptop') }}</div>
+            <div class="takeaway-text">
+              <strong>Website & Lead Conversion Gap:</strong> High opportunity to streamline direct digital enquiry paths.
+            </div>
+          </div>
+          <div class="takeaway-row purple">
+            <div class="takeaway-icon-box purple">{{ svg_icon('target') }}</div>
+            <div class="takeaway-text">
+              <strong>High Revenue Opportunity:</strong> Direct enquiries can turn passive discovery into paying clients.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Row: 3 Dimension Summary Cards -->
+    <div class="summary-pillars-grid">
+      <div class="summary-pillar-card">
+        <div class="pillar-card-head">
+          <span class="pillar-icon green">{{ svg_icon('shield') }}</span>
+          <span class="pillar-badge green">STRENGTH</span>
+        </div>
+        <h3 class="pillar-title">Reputation & Trust</h3>
+        <p class="pillar-desc">
+          {% if identity.rating %}
+            {{ identity.rating }}★ rated with {{ identity.review_count or 100 }}+ public customer reviews confirming high client satisfaction.
+          {% else %}
+            Strong community standing with verified authentic feedback and local reliability.
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="summary-pillar-card">
+        <div class="pillar-card-head">
+          <span class="pillar-icon blue">{{ svg_icon('search') }}</span>
+          <span class="pillar-badge blue">ACTIVE</span>
+        </div>
+        <h3 class="pillar-title">Market Discovery</h3>
+        <p class="pillar-desc">
+          Found across local maps and business directories with accurate location and direct contact coordinates.
+        </p>
+      </div>
+
+      <div class="summary-pillar-card">
+        <div class="pillar-card-head">
+          <span class="pillar-icon yellow">{{ svg_icon('zap') }}</span>
+          <span class="pillar-badge yellow">GROWTH AREA</span>
+        </div>
+        <h3 class="pillar-title">Conversion Readiness</h3>
+        <p class="pillar-desc">
+          {% if identity.website %}
+            Owned website active; adding 1-click WhatsApp booking will significantly increase daily conversion.
+          {% else %}
+            A dedicated mobile website with instant booking can capture high-intent visitors immediately.
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Quote Box matching Reference Page 2 -->
+    <div class="quote-callout-card">
+      <div class="quote-mark-icon">“</div>
+      <div class="quote-body-text">
+        Your reputation is stronger than your digital presence. With a few key improvements, you can convert more visitors into loyal customers.
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 2</div>
+  </footer>
+</section>

@@ -1,0 +1,35 @@
+{
+  "page": 1,
+  "name": "Cover / Identity",
+  "canvas": { "width": 1240, "height": 1754 },
+  "header": { "top": 60, "left": 80, "right": 80, "logo": "OneHive Technologies", "tagline": "Digital Solutions for a Smarter Tomorrow" },
+  "left_col": {
+    "left": 80,
+    "top": 240,
+    "width": 560,
+    "title": "Digital Presence Intelligence Report",
+    "title_highlight": "Report",
+    "subtitle": "A detailed analysis of your online presence with actionable insights for business growth.",
+    "prepared_for": { "client_name": "ABC Interiors", "category": "Interior Design & Home Solutions", "location": "Delhi, India" },
+    "tagline": "Better Presence. Bigger Possibilities.",
+    "report_date": "Report Date: 15 September 2026"
+  },
+  "hero_image": {
+    "right": 0,
+    "top": 140,
+    "width": 580,
+    "height": 1420,
+    "mask": "curved_left_boundary",
+    "hexagons": [
+      { "size": "large", "x": "top_center", "color": "#FFC400" },
+      { "size": "medium", "x": "bottom_left", "color": "#FFC400" },
+      { "size": "small", "x": "bottom_right", "color": "#FFC400" }
+    ]
+  },
+  "footer_strip": {
+    "bottom": 0,
+    "height": 70,
+    "background": "#FFC400",
+    "items": ["Websites", "AI Solutions", "Automation", "E-commerce", "Digital Growth"]
+  }
+}

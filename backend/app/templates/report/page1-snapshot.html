@@ -1,0 +1,271 @@
+{% from "icons.html" import svg_icon %}
+
+<div class="page page-1" id="page-1">
+  <div class="page-inner">
+    
+    <!-- Left Edge Amber Accent Bar (matches Golden Reference) -->
+    <div class="page-left-accent-bar" aria-hidden="true"></div>
+
+    <!-- Floating Hexagons Top-Right Corner -->
+    <div class="floating-hexagons" aria-hidden="true">
+      <svg width="220" height="150" viewBox="0 0 220 150" fill="none">
+        <!-- Main top-right cluster -->
+        <polygon points="170,10 200,27 200,62 170,80 140,62 140,27" fill="#FFBF00" fill-opacity="0.9"/>
+        <polygon points="210,50 235,65 235,95 210,110 185,95 185,65" fill="#F59E0B" fill-opacity="0.75"/>
+        <polygon points="135,68 160,82 160,112 135,127 110,112 110,82" fill="#FEF08A" fill-opacity="0.7"/>
+        <polygon points="175,100 200,115 200,145 175,160 150,145 150,115" fill="#FFBF00" fill-opacity="0.45"/>
+      </svg>
+    </div>
+
+    <!-- Header Bar -->
+    <header class="header-bar">
+      <div class="brand-group">
+        {{ svg_icon('bee_logo', extra_class='brand-bee', size=38) }}
+        <div class="brand-text">
+          <div class="brand-name">OneHive <span class="brand-sub">Technologies</span></div>
+          <div class="brand-tagline">Build. Automate. Grow.</div>
+        </div>
+      </div>
+      <div class="report-meta-group">
+        <div class="meta-label">Digital Presence Intelligence Report</div>
+        <div class="meta-id">Report ID: {{ p.report_id }}</div>
+        <div class="meta-date">{{ p.date_str }}</div>
+      </div>
+    </header>
+
+    <!-- Page Title Zone -->
+    <div class="title-zone">
+      <div class="eyebrow-text">Digital Solutions for a Smarter Tomorrow</div>
+      <h1 class="main-title">Digital Presence Intelligence <span class="gold-text">Report</span></h1>
+      <p class="title-subtext">A detailed analysis of your online presence with actionable insights for business growth.</p>
+    </div>
+
+    <!-- Business Spotlight Card -->
+    <div class="spotlight-card">
+      <div class="spotlight-icon-box">
+        {{ svg_icon('store', color='#101828', size=24) }}
+      </div>
+      <div class="spotlight-info">
+        <div class="spotlight-title">{{ p.business_name }}</div>
+        <div class="spotlight-meta">
+          <span class="spotlight-category">{{ p.category }}</span>
+          <span class="spotlight-dot">•</span>
+          <span class="spotlight-tagline">{{ p.tagline }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Split: Business Details (Left) vs Overall Score + Model (Right) -->
+    <div class="middle-split-grid">
+      
+      <!-- Left Column: Business Details Card -->
+      <div class="card business-details-card">
+        <div class="card-header-bar">
+          <h2 class="card-title">Business Details</h2>
+        </div>
+        <div class="details-table">
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('store', size=15, color='#475569') }} Business Name</span>
+            <span class="detail-val bold-val">{{ p.business_name }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('category', size=15, color='#475569') }} Category</span>
+            <span class="detail-val">{{ p.category }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('map_pin', size=15, color='#475569') }} Location</span>
+            <span class="detail-val multiline-val">{{ p.location }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('star', size=15) }} Google Rating</span>
+            <span class="detail-val rating-val">{{ p.rating_display }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('phone', size=15, color='#475569') }} Phone</span>
+            <span class="detail-val">{{ p.phone }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('globe', size=15, color='#475569') }} Website</span>
+            <span class="detail-val">
+              {% if p.website %}
+                <span class="link-val">{{ p.website_display }}</span>
+              {% else %}
+                <span class="muted-val">{{ p.website_display }}</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('map_pin', size=15, color='#475569') }} Google Maps</span>
+            <span class="detail-val">
+              {% if p.maps_url %}
+                <span class="link-val">{{ p.maps_display }}</span>
+              {% else %}
+                <span class="muted-val">{{ p.maps_display }}</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('instagram', size=15, color='#475569') }} Instagram</span>
+            <span class="detail-val">
+              {% if p.instagram_url %}
+                <span class="link-val">{{ p.instagram_display }}</span>
+              {% else %}
+                <span class="muted-val">{{ p.instagram_display }}</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('facebook', size=15, color='#475569') }} Facebook</span>
+            <span class="detail-val">
+              {% if p.facebook_url %}
+                <span class="link-val">{{ p.facebook_display }}</span>
+              {% else %}
+                <span class="muted-val">{{ p.facebook_display }}</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('whatsapp', size=15, color='#475569') }} WhatsApp</span>
+            <span class="detail-val">
+              {% if p.whatsapp_display != 'Not Available' %}
+                <span class="link-val">{{ p.whatsapp_display }}</span>
+              {% else %}
+                <span class="muted-val">{{ p.whatsapp_display }}</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">{{ svg_icon('mail', size=15, color='#475569') }} Email</span>
+            <span class="detail-val muted-val">{{ p.email_display }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Overall Score & Business Model -->
+      <div class="col-right">
+        
+        <!-- Score Card -->
+        <div class="card score-gauge-card">
+          <div class="card-header-bar center-header">
+            <h2 class="card-title">Overall Digital Presence Score</h2>
+          </div>
+          <div class="gauge-center-box">
+            <svg class="radial-gauge-svg" width="134" height="134" viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="62" class="gauge-bg-circle"/>
+              <circle cx="70" cy="70" r="62" class="gauge-active-circle"
+                      stroke-dasharray="{{ p.circumference }}"
+                      stroke-dashoffset="{{ p.dash_offset }}"/>
+            </svg>
+            <div class="gauge-score-digits">
+              <div class="score-large-num">{{ p.overall_score }}</div>
+              <div class="score-denom">/ 100</div>
+            </div>
+          </div>
+
+          <div class="score-tier-pill" style="background: {{ p.tier.bg }}; color: {{ p.tier.color }}; border-color: {{ p.tier.border }};">
+            {{ p.tier.label }}
+          </div>
+
+          <p class="score-narrative-text">{{ p.score_narrative }}</p>
+        </div>
+
+        <!-- Business Model Card -->
+        <div class="card business-model-card">
+          <div class="card-header-bar">
+            <h2 class="card-title">Business Model</h2>
+          </div>
+          <div class="model-flex-row">
+            <div class="model-icon-box">
+              {{ svg_icon('bank', size=22, color='#1E293B') }}
+            </div>
+            <div class="model-text-box">
+              <div class="model-title">{{ p.business_model.title }}</div>
+              <div class="model-desc">{{ p.business_model.desc }}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Digital Performance Breakdown (6 Dimensions Grid) -->
+    <div class="breakdown-section">
+      <div class="section-title-bar">
+        <h2 class="section-title">Digital Performance Breakdown</h2>
+      </div>
+      <div class="dimensions-cards-grid">
+        {% for dim in p.dimensions %}
+        <div class="dim-card">
+          <div class="dim-icon-box">
+            {{ svg_icon(dim.icon, size=18, color=dim.color) }}
+          </div>
+          <div class="dim-content">
+            <div class="dim-title-row">
+              <span class="dim-name">{{ dim.name }}</span>
+              <span class="dim-score-label">{{ dim.score }} <span class="dim-denom">/ {{ dim.max }}</span></span>
+            </div>
+            <div class="dim-progress-track">
+              <div class="dim-progress-fill" style="width: {{ dim.pct }}%; background: {{ dim.color }};"></div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Observations: What's Working vs What Needs Attention -->
+    <div class="observations-section-grid">
+      
+      <!-- What's Already Working -->
+      <div class="obs-card working-card">
+        <div class="obs-header-row working-header">
+          {{ svg_icon('alert_triangle', size=17, color='#16A34A') }}
+          <h3 class="obs-card-title">What's Already Working</h3>
+        </div>
+        <ul class="obs-list">
+          {% for item in p.working_bullets %}
+          <li class="obs-item">
+            {{ svg_icon('check_circle', size=16, color='#16A34A', extra_class='obs-bullet-icon') }}
+            <span>{{ item }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- What Needs Attention -->
+      <div class="obs-card attention-card">
+        <div class="obs-header-row attention-header">
+          {{ svg_icon('alert_triangle', size=17, color='#DC2626') }}
+          <h3 class="obs-card-title">What Needs Attention</h3>
+        </div>
+        <ul class="obs-list">
+          {% for item in p.attention_bullets %}
+          <li class="obs-item">
+            {{ svg_icon('exclamation_circle', size=16, color='#DC2626', extra_class='obs-bullet-icon') }}
+            <span>{{ item }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Insight Quote Card -->
+    <div class="bottom-quote-card">
+      <div class="quote-icon-col">
+        {{ svg_icon('quotes', size=22, color='#F59E0B') }}
+      </div>
+      <div class="quote-text-col">
+        {{ p.quote_text }}
+      </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+      <div class="footer-left">www.onehive.in</div>
+      <div class="footer-center">Build. Automate. Grow.</div>
+      <div class="footer-right">Page 1 of 2</div>
+    </footer>
+
+  </div>
+</div>

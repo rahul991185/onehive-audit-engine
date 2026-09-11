@@ -1,0 +1,44 @@
+{
+  "page": 2,
+  "name": "Executive Summary",
+  "section_number": "01",
+  "title": "Executive Summary",
+  "subtitle": "A quick overview of your digital presence and key insights.",
+  "components": {
+    "score_ring": {
+      "width": 440,
+      "score_label": "Overall Digital Presence Score",
+      "max": 100
+    },
+    "key_takeaways_card": {
+      "title": "Key Takeaways",
+      "width": 580,
+      "items": [
+        {
+          "icon": "star",
+          "color": "green",
+          "text": "Strong customer reputation with positive reviews."
+        },
+        {
+          "icon": "camera",
+          "color": "blue",
+          "text": "Impressive portfolio on social media."
+        },
+        {
+          "icon": "browser",
+          "color": "yellow",
+          "text": "Website and lead conversion need improvement."
+        },
+        {
+          "icon": "target",
+          "color": "purple",
+          "text": "High opportunity to generate more enquiries."
+        }
+      ]
+    },
+    "quote_box": {
+      "quote_symbol": "\u201c",
+      "text": "Your reputation is stronger than your digital presence. With a few key improvements, you can convert more visitors into loyal customers.\u201d"
+    }
+  }
+}

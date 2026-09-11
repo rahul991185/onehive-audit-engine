@@ -1,0 +1,169 @@
+{
+  "business": {
+    "business_name": "Apex Dental & Implant Centre",
+    "category": "Dental & Specialty Healthcare",
+    "address": "100 Feet Rd, HAL 2nd Stage, Indiranagar",
+    "city": "Bengaluru, Karnataka 560038",
+    "phone": "+91 80 4123 4567",
+    "website": "https://apexdentalcare.in",
+    "source_url": "https://maps.google.com/place/Apex+Dental+Indiranagar",
+    "resolved_url": "https://maps.google.com/place/Apex+Dental+Indiranagar",
+    "place_id": "ChIJb_demo_apex_dental",
+    "rating": 4.8,
+    "review_count": 142,
+    "identity_confidence": 1.0,
+    "verified": true,
+    "is_demo": true
+  },
+  "overall_score": 68,
+  "scores": {
+    "overall_score": 68,
+    "discoverability": 17,
+    "brand_identity": 11,
+    "trust_reputation": 18,
+    "website_experience": 8,
+    "lead_conversion": 8,
+    "social_presence": 6
+  },
+  "strongest_asset": "Strong local reputation with 4.8★ rating across 140+ verified Google patient reviews.",
+  "biggest_gap": "Absence of a frictionless instant enquiry / WhatsApp bridge for mobile search traffic.",
+  "attention_callout": "We've identified one area we believe deserves immediate attention.",
+  "top_opportunity": {
+    "title": "Turn High-Intent Local Searches Into Direct Consultation Bookings",
+    "priority": "HIGH",
+    "finding": "While your business commands strong local visibility and excellent Google ratings, there is no direct, instant bridge converting high-intent discovery visits into immediate consultations.",
+    "evidence": [
+      {
+        "source": "Google Business Profile",
+        "field": "Customer Rating & Volume",
+        "value": "4.8 ★ (142 reviews verified)",
+        "confidence": 0.98,
+        "observation": "High consumer trust and strong local reputation established.",
+        "status": "PASS"
+      },
+      {
+        "source": "Local Search Journey",
+        "field": "Direct Enquiry Routing",
+        "value": "Standard landline phone only; no instant WhatsApp or booking link",
+        "confidence": 0.95,
+        "observation": "Mobile patients searching after reception hours encounter friction trying to book.",
+        "status": "PARTIAL"
+      },
+      {
+        "source": "Website Conversion",
+        "field": "Mobile Lead Capture",
+        "value": "Static contact form on secondary page; no sticky consultation CTA",
+        "confidence": 0.92,
+        "observation": "Patients browsing on smartphones experience friction when attempting to enquire.",
+        "status": "FAIL"
+      }
+    ],
+    "why_it_matters": "A significant portion of local patients search for treatments on mobile devices outside traditional reception hours. When the only available action is a traditional phone call, prospective patients often postpone or reach out to alternative practices offering instant messaging.",
+    "current_journey": "Google Search → Maps Profile → Phone Call (Unanswered after hours) → Postponed Action",
+    "improved_journey": "Google Search → Verified Profile → 1-Click WhatsApp Booking → Automated Consultation Slot Secured",
+    "recommended_service": "High-Converting Consultation Website + Automated WhatsApp Concierge",
+    "confidence": 0.96
+  },
+  "recommendations": [
+    {
+      "order": 1,
+      "category": "BUILD",
+      "title": "Dedicated High-Converting Mobile Consultation Page",
+      "description": "Deploy a lightning-fast, mobile-first booking landing page designed specifically to convert local search traffic with verified treatment highlights and doctor credentials."
+    },
+    {
+      "order": 2,
+      "category": "CONVERT",
+      "title": "Direct 1-Click WhatsApp Concierge Integration",
+      "description": "Embed automated WhatsApp consultation routing directly on your Google profile and website to capture enquiries 24/7 with instant acknowledgment."
+    },
+    {
+      "order": 3,
+      "category": "GROW",
+      "title": "Automated Post-Treatment Review Harvesting",
+      "description": "Implement a systematic digital review capture workflow to cross the 250+ review threshold and solidify dominant local ranking in Indiranagar."
+    }
+  ],
+  "website_concept": {
+    "business_name": "Apex Dental & Implant Centre",
+    "industry": "Dental & Specialty Healthcare",
+    "location": "Indiranagar, Bengaluru",
+    "headline": "Modern, Gentle Dental Care & Precision Implants",
+    "subheadline": "Experience world-class dental expertise in Indiranagar. Over 140+ verified 5-star patient reviews.",
+    "primary_cta": "Book Consultation via WhatsApp",
+    "secondary_cta": "View Treatments",
+    "services": [
+      {
+        "name": "Precision Dental Implants",
+        "description": "Permanent, natural-feeling tooth replacements using Swiss computer-guided technology."
+      },
+      {
+        "name": "Invisible Aligners & Orthodontics",
+        "description": "Discreet, custom clear aligners for teeth straightening without traditional metal braces."
+      },
+      {
+        "name": "Root Canal & Pain-Free Laser Dentistry",
+        "description": "Single-visit micro-endodontic treatments performed with computerized local anesthesia."
+      },
+      {
+        "name": "Smile Makeover & Cosmetic Veneers",
+        "description": "Handcrafted porcelain veneers and gentle whitening for a confident, natural smile."
+      }
+    ],
+    "trust_signals": [
+      "4.8★ Verified Google Rating (142 Patient Reviews)",
+      "Strict 10-Step Hospital Sterilization Protocol",
+      "Senior Specialists with 15+ Years Clinical Experience"
+    ],
+    "brand_colors": {
+      "primary": "#0D9488",
+      "dark": "#0F172A",
+      "background": "#F8FAFC",
+      "text": "#1E293B"
+    },
+    "whatsapp_cta": "https://wa.me/918041234567?text=Hi%20Apex%20Dental,%20I%20would%20like%20to%20enquire%20about%20a%20consultation",
+    "final_cta": "Schedule Your Consultation Today"
+  },
+  "quick_win": {
+    "title": "Instant WhatsApp Patient Enquiry & Slot Pre-Fill Flow",
+    "category": "Lead Conversion Architecture",
+    "why_chosen": "Because your #1 bottleneck is converting high-intent mobile searchers into immediate appointments, this ready-to-use WhatsApp flow eliminates friction by giving patients a 1-click booking path.",
+    "ready_to_use_asset": "PATIENT OUTREACH PRE-FILL LINK:\nhttps://wa.me/918041234567?text=Hi%20Apex%20Dental%20Clinic,%20I%20found%20you%20on%20Google%20and%20would%20like%20to%20book%20a%20consultation%20for%20[Dental%20Checkup/Implants].\n\nAUTOMATED INSTANT REPLY SCRIPT (for WhatsApp Business):\n'Hello! Thank you for reaching out to Apex Dental & Implant Centre, Indiranagar.\n\nDr. and our clinical team are currently attending to patients. To secure your consultation slot quickly:\n1. Please reply with your Preferred Day & Time (Morning/Evening)\n2. Any specific concern (Routine Checkup, Toothache, Implants, Smile Design)\n\nWe will confirm your exact slot within 15 minutes during clinic hours (9 AM - 8 PM). Have a healthy day!'",
+    "instructions": "1. Save the pre-fill link as your primary Action Link on Google Business Profile.\n2. Configure the automated reply script in WhatsApp Business → Business Tools → Away/Greeting Message.\n3. Add the link as a WhatsApp button on your social profiles.",
+    "asset_format": "text"
+  },
+  "whatsapp_message": "Hello,\n\nWe recently reviewed Apex Dental & Implant Centre's online presence in Indiranagar and prepared a complimentary Digital Presence Intelligence Report specifically for your practice.\n\nYour 4.8★ rating across 140+ reviews is an outstanding asset.\n\nWe noticed one high-leverage area where high-intent searchers on mobile could book consultations with significantly less friction.\n\nI have prepared the 5-page report along with a visual website concept showing how the improved experience could look.\n\nI'd be glad to share it with you.\n\nRegards,\nOneHive Technologies",
+  "sales_brief": {
+    "business_name": "Apex Dental & Implant Centre",
+    "industry": "Dental & Specialty Healthcare",
+    "location": "Indiranagar, Bengaluru",
+    "website": "https://apexdentalcare.in",
+    "identity_confidence": "HIGH (100% verified demo profile)",
+    "overall_score": 68,
+    "scores": {
+      "overall_score": 68,
+      "discoverability": 17,
+      "brand_identity": 11,
+      "trust_reputation": 18,
+      "website_experience": 8,
+      "lead_conversion": 8,
+      "social_presence": 6
+    },
+    "strongest_asset": "Strong local reputation (4.8★ across 142 reviews)",
+    "biggest_gap": "Lack of instant WhatsApp enquiry routing for mobile visitors",
+    "top_opportunity": "Turn High-Intent Local Searches Into Direct Consultation Bookings",
+    "why_it_matters": "Captures after-hours and mobile patient demand that currently bounces or delays calling.",
+    "evidence_highlights": [
+      "Verified 4.8★ rating shows patient trust is already established",
+      "Only traditional landline displayed for appointments",
+      "No direct WhatsApp CTA on digital presence"
+    ],
+    "recommended_service": "OneHive Lead Conversion System (Bespoke Mobile Consultation Site + WhatsApp Automation)",
+    "likely_buying_trigger": "Desire to fill idle clinic slots with high-value implant/aligner patients without spending heavily on paid ads.",
+    "sales_angle": "Compliment their exceptional review reputation first. Frame the opportunity as maximizing returns on the local trust they have already earned.",
+    "opening_message": "Dr., your Indiranagar practice has exceptional patient feedback. We noticed high-intent searchers currently have to call a landline to book. We designed a concept that lets patients book in 1 click over WhatsApp. Would you like to review the concept?",
+    "objection_to_expect": "'Our receptionist already answers patient phone calls.'",
+    "objection_response": "'That works well during clinic hours. However, over 65% of searches for specialized dental care occur during evening commute or after 8 PM when reception is closed. A WhatsApp concierge ensures those patients book immediately rather than looking elsewhere.'",
+    "recommended_next_step": "Show Page 4 of the report (the live Website Concept Teaser) and demonstrate the WhatsApp 1-click booking flow."
+  }
+}

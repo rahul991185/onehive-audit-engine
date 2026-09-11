@@ -1,0 +1,27 @@
+{
+  "page": 6,
+  "name": "Your #1 Opportunity",
+  "section_number": "05",
+  "title": "Your #1 Opportunity",
+  "subtitle": "The most important area to focus on right now.",
+  "components": {
+    "opportunity_card": {
+      "badge": "HIGH PRIORITY",
+      "icon": "warning_triangle",
+      "headline": "Turn your existing reputation and portfolio into a stronger enquiry system.",
+      "body": "You have strong brand value and an impressive portfolio, but the path from someone discovering your business to contacting you isn't clear or structured enough."
+    },
+    "why_it_matters": {
+      "heading": "Why This Matters",
+      "items": [
+        "Potential customers may view your work but not take the next step.",
+        "Every additional step creates friction and reduces enquiries.",
+        "A streamlined digital journey can significantly increase your monthly enquiries and revenue."
+      ]
+    },
+    "bottom_card": {
+      "quote_symbol": "\u201c",
+      "text": "Great design deserves to be seen and experienced. Let's make it easier for your next customer to find you."
+    }
+  }
+}

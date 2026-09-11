@@ -1,0 +1,161 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 7: 06 CUSTOMER JOURNEY ANALYSIS ================= -->
+<section class="page page-7">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">06</div>
+      <div>
+        <h2 class="section-main-heading">CUSTOMER JOURNEY ANALYSIS</h2>
+        <p class="section-sub-heading">Here's how potential customers currently discover and interact with your business.</p>
+      </div>
+    </div>
+
+    <!-- Side-by-Side Journey Comparison Grid -->
+    <div class="journey-comparison-grid">
+      <!-- Column 1: Current Journey (Friction & Drop-off) -->
+      <div class="journey-column current-column">
+        <div class="journey-col-header">
+          <span class="journey-col-pill gray">CURRENT STATE</span>
+          <h3 class="journey-col-title">Current Journey</h3>
+        </div>
+
+        <div class="journey-steps-container">
+          <!-- Step 1 -->
+          <div class="journey-step-card current">
+            <div class="journey-step-icon gray">{{ svg_icon('search') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Google Search</div>
+              <div class="journey-step-desc">Discover your business through local queries</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 2 -->
+          <div class="journey-step-card current">
+            <div class="journey-step-icon gray">{{ svg_icon('phone') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">View Social / Maps</div>
+              <div class="journey-step-desc">See your work, address, and client reviews</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 3 (Friction) -->
+          <div class="journey-step-card friction">
+            <div class="journey-step-icon yellow">{{ svg_icon('eye') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Look for More Details</div>
+              <div class="journey-step-desc">Limited information available without website</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 4 (Friction) -->
+          <div class="journey-step-card friction">
+            <div class="journey-step-icon red">{{ svg_icon('cross') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Attempt to Connect</div>
+              <div class="journey-step-desc">No clear or automated enquiry flow</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 5 (Drop-off) -->
+          <div class="journey-step-card dropoff">
+            <div class="journey-step-icon red">{{ svg_icon('alert') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Potential Customer Leaves</div>
+              <div class="journey-step-desc">High drop-off rate without captured contact</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Recommended Journey (Seamless & High Conversion) -->
+      <div class="journey-column recommended-column">
+        <div class="journey-col-header">
+          <span class="journey-col-pill green">RECOMMENDED STATE</span>
+          <h3 class="journey-col-title">Recommended Journey</h3>
+        </div>
+
+        <div class="journey-steps-container">
+          <!-- Step 1 -->
+          <div class="journey-step-card success">
+            <div class="journey-step-icon blue">{{ svg_icon('search') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Multi-Channel Discovery</div>
+              <div class="journey-step-desc">Google, Instagram, and local search visibility</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow success">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 2 -->
+          <div class="journey-step-card success">
+            <div class="journey-step-icon blue">{{ svg_icon('laptop') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Visit Dedicated Website</div>
+              <div class="journey-step-desc">Explore curated projects, services & proof</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow success">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 3 -->
+          <div class="journey-step-card success">
+            <div class="journey-step-icon green">{{ svg_icon('shield') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Build Immediate Trust</div>
+              <div class="journey-step-desc">View verified testimonials & credentials</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow success">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 4 -->
+          <div class="journey-step-card success">
+            <div class="journey-step-icon green">{{ svg_icon('whatsapp') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">1-Click WhatsApp / Form</div>
+              <div class="journey-step-desc">Instant booking & direct consultation enquiry</div>
+            </div>
+          </div>
+          <div class="journey-down-arrow success">{{ svg_icon('chevron_down') }}</div>
+
+          <!-- Step 5 -->
+          <div class="journey-step-card success highlight">
+            <div class="journey-step-icon green">{{ svg_icon('check') }}</div>
+            <div class="journey-step-info">
+              <div class="journey-step-title">Verified Lead Captured</div>
+              <div class="journey-step-desc">Automated alerts send enquiry directly to your team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Yellow Card with Bar Chart Icon -->
+    <div class="yellow-insight-card">
+      <div class="yellow-card-icon">
+        {{ svg_icon('barchart') }}
+      </div>
+      <div class="yellow-card-text">
+        A clear, friction-free digital journey turns existing search interest into qualified, paying clients.
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 7</div>
+  </footer>
+</section>

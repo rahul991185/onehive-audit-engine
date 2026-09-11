@@ -1,0 +1,180 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 5: 04 YOUR #1 OPPORTUNITY ================= -->
+<section class="page page-5">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">04</div>
+      <div>
+        <h2 class="section-main-heading">YOUR #1 OPPORTUNITY</h2>
+        <p class="section-sub-heading">The most important area to focus on right now.</p>
+      </div>
+    </div>
+
+    <!-- Red High-Priority Alert Box matching Reference Page 6 -->
+    <div class="priority-alert-box">
+      <div class="alert-top-badge">
+        <span class="warning-triangle-icon">{{ svg_icon('alert_triangle') }}</span>
+        <span class="badge-text">HIGH PRIORITY</span>
+      </div>
+      <h3 class="alert-opportunity-headline">
+        {{ opportunity.title | upper }}
+      </h3>
+      <p class="alert-opportunity-desc">
+        {{ opportunity.description }}
+      </p>
+    </div>
+
+    <!-- Why This Matters Section matching Reference Page 6 -->
+    <div class="why-matters-block">
+      <div class="why-matters-title">
+        <span class="wm-icon">{{ svg_icon('target') }}</span> Why This Matters
+      </div>
+      <div class="why-matters-grid">
+        <div class="wm-card">
+          <div class="wm-check-circle">{{ svg_icon('check') }}</div>
+          <div class="wm-text-body">
+            <strong>Strong Existing Discovery:</strong> High-intent searchers are already discovering your business on Google Maps.
+          </div>
+        </div>
+        <div class="wm-card">
+          <div class="wm-check-circle">{{ svg_icon('check') }}</div>
+          <div class="wm-text-body">
+            <strong>High Verified Trust:</strong> Your strong review rating validates credibility before prospective clients reach out.
+          </div>
+        </div>
+        <div class="wm-card">
+          <div class="wm-check-circle">{{ svg_icon('check') }}</div>
+          <div class="wm-text-body">
+            <strong>Clearer Next Step:</strong> An owned digital destination provides structured service clarity and lower friction for enquiries.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Journey Analysis Flowchart matching Reference Page 7 -->
+    <div class="journey-analysis-container">
+      <div class="journey-header-label">Customer Journey Analysis</div>
+      <div class="journey-columns-grid">
+        <!-- Left: Current Journey -->
+        <div class="journey-column current">
+          <div class="journey-col-title current">Current Journey</div>
+          <div class="journey-steps-list">
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('search') }}</span>
+              <div class="j-text">
+                <div class="j-main">Google Search / Maps</div>
+                <div class="j-sub">Discovers your listing</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('phone') }}</span>
+              <div class="j-text">
+                <div class="j-main">View Profile Details</div>
+                <div class="j-sub">Reviews rating & phone</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('phone') }}</span>
+              <div class="j-text">
+                <div class="j-main">Direct Phone Call Only</div>
+                <div class="j-sub">Subject to operating hours</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill warning">
+              <span class="j-icon">{{ svg_icon('alert_triangle') }}</span>
+              <div class="j-text">
+                <div class="j-main">Potential Drop-off</div>
+                <div class="j-sub">Visitors needing fast messaging leave</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Recommended Journey -->
+        <div class="journey-column recommended">
+          <div class="journey-col-title recommended">Recommended Journey</div>
+          <div class="journey-steps-list">
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('search') }}</span>
+              <div class="j-text">
+                <div class="j-main">Google Search / Maps</div>
+                <div class="j-sub">Discovers your listing</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('globe') }}</span>
+              <div class="j-text">
+                <div class="j-main">Visit Owned Website</div>
+                <div class="j-sub">Explores verified services & care</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill">
+              <span class="j-icon">{{ svg_icon('chat') }}</span>
+              <div class="j-text">
+                <div class="j-main">WhatsApp / Direct Enquiry</div>
+                <div class="j-sub">Lower friction, instant routing</div>
+              </div>
+            </div>
+            <div class="j-arrow-down">{{ svg_icon('arrow_down') }}</div>
+            <div class="j-step-pill success">
+              <span class="j-icon">{{ svg_icon('target') }}</span>
+              <div class="j-text">
+                <div class="j-main">Consultation Confirmed</div>
+                <div class="j-sub">Converted into active client</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended First Move Box -->
+    <div class="recommended-first-move-box">
+      <div class="rfm-tag">OUR RECOMMENDED FIRST MOVE</div>
+      <div class="rfm-title">{{ first_move }}</div>
+      <div class="rfm-desc">{{ first_move_desc }}</div>
+    </div>
+
+    <!-- Closing Call to Action Banner matching Reference Page 9 -->
+    <div class="closing-cta-card">
+      <div class="closing-cta-top">
+        <div class="cta-headline">Ready to explore the opportunity?</div>
+        <div class="cta-subline">
+          We'd be happy to walk you through the findings and discuss what implementation could look like.
+        </div>
+      </div>
+      <div class="cta-action-row">
+        <div class="cta-pill-button">
+          SCHEDULE A COMPLIMENTARY CONSULTATION →
+        </div>
+        <div class="cta-contact-meta">
+          <span>{{ svg_icon('globe') }} {{ config.ONEHIVE_WEBSITE }}</span>
+          <span>{{ svg_icon('mail') }} {{ config.ONEHIVE_EMAIL }}</span>
+          <span>{{ svg_icon('phone') }} {{ config.ONEHIVE_PHONE }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 5</div>
+  </footer>
+</section>

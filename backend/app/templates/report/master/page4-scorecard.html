@@ -1,0 +1,181 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 4: 03 DETAILED SCORECARD ================= -->
+<section class="page page-4">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">03</div>
+      <div>
+        <h2 class="section-main-heading">DETAILED SCORECARD</h2>
+        <p class="section-sub-heading">Your performance across key digital areas.</p>
+      </div>
+    </div>
+
+    <!-- 6 Score Cards in a 2-column x 3-row High-Density Grid -->
+    <div class="scorecard-grid-2col">
+      <!-- 1. Discoverability -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box blue">
+            {{ svg_icon('search') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Discoverability</div>
+            <div class="sc-card-subtitle">How easily customers find you online</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.discoverability }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.discoverability >= 75 %}fill-green{% elif norm_scores.discoverability >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.discoverability }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('discoverability', 'Local Google Business profile and search visibility signals across geographic queries.') }}
+        </div>
+      </div>
+
+      <!-- 2. Brand & Identity -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box purple">
+            {{ svg_icon('tag') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Brand & Identity</div>
+            <div class="sc-card-subtitle">Visual consistency & category clarity</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.brand_identity }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.brand_identity >= 75 %}fill-green{% elif norm_scores.brand_identity >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.brand_identity }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('brand_positioning', 'Core brand clarity, clinic naming recognition, and service presentation.') }}
+        </div>
+      </div>
+
+      <!-- 3. Trust & Reputation -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box green">
+            {{ svg_icon('shield') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Trust & Reputation</div>
+            <div class="sc-card-subtitle">Reviews, ratings & verified credibility</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.trust_reputation }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.trust_reputation >= 75 %}fill-green{% elif norm_scores.trust_reputation >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.trust_reputation }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('trust_reputation', 'Verified patient feedback volume and high sentiment rating stability.') }}
+        </div>
+      </div>
+
+      <!-- 4. Digital Experience -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box orange">
+            {{ svg_icon('laptop') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Digital Experience</div>
+            <div class="sc-card-subtitle">Design, mobile usability & destination</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.website_experience }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.website_experience >= 75 %}fill-green{% elif norm_scores.website_experience >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.website_experience }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('digital_experience', 'Presence and performance of an owned digital destination.') }}
+        </div>
+      </div>
+
+      <!-- 5. Lead Conversion -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box yellow">
+            {{ svg_icon('zap') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Lead Conversion</div>
+            <div class="sc-card-subtitle">Enquiry paths, WhatsApp booking & CTAs</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.lead_conversion }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.lead_conversion >= 75 %}fill-green{% elif norm_scores.lead_conversion >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.lead_conversion }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('lead_conversion', 'Direct enquiry pathways and booking options for new patients.') }}
+        </div>
+      </div>
+
+      <!-- 6. Social Media Presence -->
+      <div class="scorecard-grid-card">
+        <div class="sc-card-top">
+          <div class="sc-card-icon-box blue">
+            {{ svg_icon('users') }}
+          </div>
+          <div class="sc-card-title-wrap">
+            <div class="sc-card-title">Social Media Presence</div>
+            <div class="sc-card-subtitle">Activity, community reach & engagement</div>
+          </div>
+          <div class="sc-card-score">
+            <span class="sc-score-num">{{ norm_scores.social_presence }}</span>
+            <span class="sc-score-denom">/100</span>
+          </div>
+        </div>
+        <div class="sc-progress-track">
+          <div class="sc-progress-fill {% if norm_scores.social_presence >= 75 %}fill-green{% elif norm_scores.social_presence >= 50 %}fill-yellow{% else %}fill-red{% endif %}" style="width: {{ norm_scores.social_presence }}%;"></div>
+        </div>
+        <div class="sc-interpretation">
+          {{ scores.dimension_explanations.get('social_presence', 'Social channels and customer engagement proof across public profiles.') }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Visual Insight Card matching Reference Page 4 -->
+    <div class="scorecard-bottom-insight-card">
+      <div class="insight-icon-circle">
+        {{ svg_icon('lightbulb') }}
+      </div>
+      <div class="insight-text-content">
+        Your strongest digital assets are concentrated in {{ strongest_asset }}, while {{ biggest_gap }} remains the clearest area for structured business improvement.
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 4</div>
+  </footer>
+</section>

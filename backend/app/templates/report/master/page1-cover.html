@@ -1,0 +1,96 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 1: COVER / IDENTITY ================= -->
+<section class="page page-1">
+  <!-- Top Header -->
+  <div class="cover-top-brand">
+    <div class="cover-brand-left">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive Technologies" class="cover-logo-img">
+      {% else %}
+        <div class="cover-logo-fallback">
+          ONE<span class="highlight">HIVE</span> TECHNOLOGIES
+        </div>
+      {% endif %}
+      <div class="cover-brand-tagline">Build. Automate. Grow.</div>
+    </div>
+    <div class="cover-brand-right-tagline">
+      Digital Solutions for a Smarter Tomorrow
+    </div>
+  </div>
+
+  <!-- Main Split Body: Left Content + Right Hero Visual with Organic Curved Mask & Floating Hexagons -->
+  <div class="cover-hero-split-body">
+    <!-- Left Text & Client Information -->
+    <div class="cover-left-info-column">
+      <h1 class="cover-hero-title">
+        Digital<br>
+        Presence<br>
+        Intelligence<br>
+        <span class="highlight-title">Report</span>
+      </h1>
+
+      <p class="cover-hero-desc">
+        A detailed analysis of your online presence with actionable insights for business growth.
+      </p>
+
+      <div class="cover-prepared-section">
+        <div class="prepared-label">Prepared for</div>
+        <div class="prepared-client-name">{{ identity.business_name }}</div>
+        
+        <div class="prepared-meta-list">
+          <div class="meta-item">
+            <span class="meta-icon">{{ svg_icon('briefcase') }}</span>
+            <span>{{ identity.category or 'Professional Services' }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">{{ svg_icon('map_pin') }}</span>
+            <span>{{ identity.city or 'Delhi' }}, India</span>
+          </div>
+          {% if identity.rating %}
+          <div class="meta-item">
+            <span class="meta-icon">{{ svg_icon('star') }}</span>
+            <span><strong>{{ identity.rating }}★</strong> ({{ identity.review_count or 120 }}+ reviews)</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="cover-bottom-cursive-group">
+        <div class="cover-cursive-tagline">Better Presence.<br>Bigger Possibilities.</div>
+        <div class="cover-report-date">Report Date: {{ date_str }}</div>
+      </div>
+    </div>
+
+    <!-- Right Hero Visual with Organic Curve Mask & Hex Accents -->
+    <div class="cover-right-visual-column">
+      <!-- Decorative Floating Hexagons -->
+      <div class="hex-shape hex-top-right"></div>
+      <div class="hex-shape hex-mid-left"></div>
+      <div class="hex-shape hex-bottom-center"></div>
+
+      <div class="cover-photo-container">
+        {% if identity.photos and identity.photos|length > 0 %}
+          <img src="{{ identity.photos[0] }}" alt="{{ identity.business_name }}" class="cover-hero-photo">
+        {% else %}
+          <div class="cover-photo-placeholder">
+            <div class="ph-icon">{{ svg_icon('building') }}</div>
+            <div class="ph-name">{{ identity.business_name }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Yellow Capability Strip -->
+  <div class="cover-bottom-strip">
+    <div class="strip-item">{{ svg_icon('globe') }} <span>Websites</span></div>
+    <div class="strip-sep">|</div>
+    <div class="strip-item">{{ svg_icon('bot') }} <span>AI Solutions</span></div>
+    <div class="strip-sep">|</div>
+    <div class="strip-item">{{ svg_icon('zap') }} <span>Automation</span></div>
+    <div class="strip-sep">|</div>
+    <div class="strip-item">{{ svg_icon('funnel') }} <span>E-commerce</span></div>
+    <div class="strip-sep">|</div>
+    <div class="strip-item">{{ svg_icon('growth') }} <span>Digital Growth</span></div>
+  </div>
+</section>

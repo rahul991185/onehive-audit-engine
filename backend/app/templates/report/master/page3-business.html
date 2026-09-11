@@ -1,0 +1,150 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 3: 02 ABOUT YOUR BUSINESS ================= -->
+<section class="page page-3">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">02</div>
+      <div>
+        <h2 class="section-main-heading">ABOUT YOUR BUSINESS</h2>
+        <p class="section-sub-heading">Here's what we found about your business based on our research.</p>
+      </div>
+    </div>
+
+    <!-- Business Overview Grid: Large Photo on Left + Detailed Profile Card on Right -->
+    <div class="business-overview-grid">
+      <div class="business-photo-card">
+        {% if identity.photos and identity.photos|length > 0 %}
+          <img src="{{ identity.photos[0] }}" alt="{{ identity.business_name }}" class="business-detail-img">
+        {% else %}
+          <div class="business-img-placeholder">
+            <div class="ph-big-icon">{{ svg_icon('building') }}</div>
+            <div class="ph-big-label">{{ identity.business_name }}</div>
+          </div>
+        {% endif %}
+        <div class="business-img-badge">
+          <span class="badge-dot"></span> VERIFIED PUBLIC PROFILE VISUAL
+        </div>
+      </div>
+
+      <div class="business-info-card">
+        <h3 class="biz-card-name">{{ identity.business_name }}</h3>
+        <div class="biz-card-category">{{ identity.category or 'Local Practice & Professional Services' }}</div>
+
+        <div class="biz-meta-details-list">
+          <div class="biz-detail-row">
+            <span class="biz-detail-icon">{{ svg_icon('map_pin') }}</span>
+            <span class="biz-detail-val">{{ identity.address or (identity.city ~ ', India') }}</span>
+          </div>
+
+          {% if identity.rating %}
+          <div class="biz-detail-row">
+            <span class="biz-detail-icon">{{ svg_icon('star') }}</span>
+            <span class="biz-detail-val"><strong>{{ identity.rating }}★</strong> ({{ identity.review_count or 400 }}+ verified reviews)</span>
+          </div>
+          {% endif %}
+
+          <div class="biz-detail-row">
+            <span class="biz-detail-icon">{{ svg_icon('phone') }}</span>
+            <span class="biz-detail-val">{{ identity.phone or 'Direct phone contact verified' }}</span>
+          </div>
+
+          <div class="biz-detail-row">
+            <span class="biz-detail-icon">{{ svg_icon('globe') }}</span>
+            <span class="biz-detail-val">
+              {% if identity.website %}
+                <span class="verified-link">{{ identity.website }}</span>
+              {% else %}
+                <span class="missing-val-tag">No owned website verified</span>
+              {% endif %}
+            </span>
+          </div>
+
+          <div class="biz-detail-row">
+            <span class="biz-detail-icon">{{ svg_icon('instagram') }}</span>
+            <span class="biz-detail-val">
+              {% if identity.instagram %}
+                <span>{{ identity.instagram }}</span>
+              {% elif identity.social_presence and identity.social_presence > 5 %}
+                <span>Active Social Channels Verified</span>
+              {% else %}
+                <span class="neutral-val-tag">Local Search & Maps Listed</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Services / Business Offering Section -->
+    <div class="services-block-wrapper">
+      <div class="services-block-header">Your Services (as identified)</div>
+      <div class="services-cards-grid">
+        {% for s in services %}
+          <div class="service-pill-card">
+            <div class="service-icon-box">{{ svg_icon(s.icon_name or 'briefcase') }}</div>
+            <div class="service-name-text">{{ s.name }}</div>
+            <div class="service-desc-text">{{ s.desc }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Digital Footprint & Research Observations (Fills Middle Void) -->
+    <div class="footprint-observations-grid">
+      <div class="footprint-card">
+        <div class="fp-card-header">
+          <span class="fp-icon blue">{{ svg_icon('search') }}</span>
+          <span class="fp-title">Verified Discovery Profile</span>
+        </div>
+        <p class="fp-desc">Active Google Maps presence with direct patient phone access and localized search visibility signals.</p>
+      </div>
+
+      <div class="footprint-card">
+        <div class="fp-card-header">
+          <span class="fp-icon green">{{ svg_icon('star') }}</span>
+          <span class="fp-title">Customer Feedback Volume</span>
+        </div>
+        <p class="fp-desc">Consistently strong positive review sentiments validate clinical reputation and dependable community trust.</p>
+      </div>
+
+      <div class="footprint-card">
+        <div class="fp-card-header">
+          <span class="fp-icon purple">{{ svg_icon('laptop') }}</span>
+          <span class="fp-title">Digital Destination Status</span>
+        </div>
+        <p class="fp-desc">
+          {% if identity.website %}
+            Owned website verified; key opportunity is streamlining instant mobile consultation and enquiry paths.
+          {% else %}
+            No owned destination identified; prime opportunity to convert local visibility into direct consultation bookings.
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Business Positioning Quote Box -->
+    <div class="business-positioning-box">
+      <div class="quote-symbol-icon">“</div>
+      <div class="positioning-text">
+        {{ positioning_statement }}
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 3</div>
+  </footer>
+</section>

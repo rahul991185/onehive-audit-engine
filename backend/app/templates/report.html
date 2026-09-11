@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Presence Intelligence Report — {{ audit.business.name }}</title>
+  <style>
+    {{ css_content }}
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1: COVER ================= -->
+  <section class="page page-1">
+    <div class="cover-accent-top"></div>
+    <div class="cover-container">
+      <div class="cover-top">
+        {% if logo_base64 %}
+          <img src="{{ logo_base64 }}" alt="OneHive Technologies" class="cover-logo">
+        {% else %}
+          <div style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: #0B0F19;">
+            ONE<span style="color: #FFB800;">HIVE</span>
+          </div>
+        {% endif %}
+        <span class="confidential-badge">CONFIDENTIAL INTELLIGENCE</span>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-tag">
+          <span class="cover-tag-dot"></span>
+          Executive Strategic Brief
+        </div>
+
+        <h1 class="cover-title">
+          DIGITAL PRESENCE<br>
+          <span>INTELLIGENCE REPORT</span>
+        </h1>
+
+        <p class="cover-subtitle">
+          An objective, evidence-based diagnostic evaluating local discoverability, customer journey friction, and commercial growth opportunities.
+        </p>
+
+        <div class="client-card">
+          <div class="client-label">Prepared exclusively for</div>
+          <div class="client-name">{{ audit.business.name }}</div>
+          <div class="client-details">
+            <span class="client-detail-item"><strong>Industry:</strong> {{ audit.business.industry }}</span>
+            <span class="client-detail-item"><strong>Location:</strong> {{ audit.business.location }}</span>
+            <span class="client-detail-item"><strong>Date:</strong> {{ audit.created_at }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-footer-banner">
+        <div class="onehive-brand-block">
+          <h3>ONEHIVE TECHNOLOGIES</h3>
+          <p>Digital Presence Engineering & Growth Systems</p>
+        </div>
+        <div class="onehive-tagline-block">
+          <div class="main-tag">Build. Automate. Grow.</div>
+          <div class="sub-tag">Better Presence. Bigger Possibilities.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAGE 2: YOUR DIGITAL SNAPSHOT ================= -->
+  <section class="page page-2">
+    <header class="page-header">
+      <div class="header-brand">
+        {% if logo_base64 %}
+          <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo">
+        {% endif %}
+        <span class="header-doc-title">Digital Presence Intelligence</span>
+      </div>
+      <div class="header-meta">{{ audit.business.name }}</div>
+    </header>
+
+    <div class="page-content">
+      <div class="section-headline">
+        <div class="section-label">Diagnostic Benchmark</div>
+        <h2 class="section-title">Your Digital Snapshot</h2>
+      </div>
+
+      <div class="snapshot-overview">
+        <div class="overall-score-card">
+          <div class="overall-score-num">{{ audit.overall_score }}</div>
+          <div class="overall-score-total">/ 100</div>
+          <div class="overall-score-label">Digital Presence Score</div>
+        </div>
+
+        <div class="dimension-scores-grid">
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Discoverability</span>
+              <span class="dimension-score-val">{{ audit.scores.discoverability }}/20</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.discoverability >= 15 %}high{% endif %}" style="width: {{ (audit.scores.discoverability / 20) * 100 }}%;"></div>
+            </div>
+          </div>
+
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Brand & Identity</span>
+              <span class="dimension-score-val">{{ audit.scores.brand_identity }}/15</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.brand_identity >= 11 %}high{% endif %}" style="width: {{ (audit.scores.brand_identity / 15) * 100 }}%;"></div>
+            </div>
+          </div>
+
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Trust & Reputation</span>
+              <span class="dimension-score-val">{{ audit.scores.trust_reputation }}/20</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.trust_reputation >= 15 %}high{% endif %}" style="width: {{ (audit.scores.trust_reputation / 20) * 100 }}%;"></div>
+            </div>
+          </div>
+
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Website Experience</span>
+              <span class="dimension-score-val">{{ audit.scores.website_experience }}/15</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.website_experience >= 11 %}high{% endif %}" style="width: {{ (audit.scores.website_experience / 15) * 100 }}%;"></div>
+            </div>
+          </div>
+
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Lead Conversion</span>
+              <span class="dimension-score-val">{{ audit.scores.lead_conversion }}/20</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.lead_conversion >= 15 %}high{% endif %}" style="width: {{ (audit.scores.lead_conversion / 20) * 100 }}%;"></div>
+            </div>
+          </div>
+
+          <div class="dimension-row">
+            <div class="dimension-header">
+              <span>Social Presence</span>
+              <span class="dimension-score-val">{{ audit.scores.social_presence }}/10</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill {% if audit.scores.social_presence >= 8 %}high{% endif %}" style="width: {{ (audit.scores.social_presence / 10) * 100 }}%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="attention-section">
+        <div class="attention-title">
+          <span>WHAT CAUGHT OUR ATTENTION</span>
+        </div>
+
+        <div class="attention-cards-grid">
+          <div class="attention-card strongest">
+            <div class="attention-card-header">
+              <span>✓ Strongest Asset</span>
+            </div>
+            <div class="attention-card-text">
+              {{ audit.strongest_asset }}
+            </div>
+          </div>
+
+          <div class="attention-card gap">
+            <div class="attention-card-header">
+              <span>! Primary Gap</span>
+            </div>
+            <div class="attention-card-text">
+              {{ audit.biggest_gap }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="immediate-callout-box">
+        <div class="callout-icon-hexagon">!</div>
+        <div class="callout-content">
+          <h4>Immediate Commercial Focus</h4>
+          <p>{{ audit.attention_callout }} On the following page, we isolate this single high-leverage lever.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span>OneHive Technologies</span>
+        <span class="footer-tagline">· Build. Automate. Grow.</span>
+      </div>
+      <div class="page-number">2 / 5</div>
+    </footer>
+  </section>
+
+  <!-- ================= PAGE 3: YOUR #1 GROWTH OPPORTUNITY ================= -->
+  <section class="page page-3">
+    <header class="page-header">
+      <div class="header-brand">
+        {% if logo_base64 %}
+          <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo">
+        {% endif %}
+        <span class="header-doc-title">Digital Presence Intelligence</span>
+      </div>
+      <div class="header-meta">{{ audit.business.name }}</div>
+    </header>
+
+    <div class="page-content">
+      <div class="section-headline">
+        <div class="opp-badge-row">
+          <span class="priority-tag">{{ audit.top_opportunity.priority }} PRIORITY</span>
+          <span class="confidence-tag">Verified Signal: {{ (audit.top_opportunity.confidence * 100) | int }}% Confidence</span>
+        </div>
+        <h2 class="section-title">Your #1 Growth Opportunity</h2>
+      </div>
+
+      <div class="opportunity-card">
+        <h3 class="opportunity-title">{{ audit.top_opportunity.title }}</h3>
+        <p class="opportunity-finding">{{ audit.top_opportunity.finding }}</p>
+      </div>
+
+      <div class="evidence-block">
+        <div class="block-subtitle">Observed Evidence & Discovery Points</div>
+        <table class="evidence-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Channel / Source</th>
+              <th style="width: 30%;">Data Point</th>
+              <th style="width: 45%;">Observation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ev in audit.top_opportunity.evidence %}
+            <tr>
+              <td><strong>{{ ev.source }}</strong></td>
+              <td>{{ ev.value }}</td>
+              <td>{{ ev.observation }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="why-matters-box">
+        <h4>Commercial Impact & Why This Matters</h4>
+        <p>{{ audit.top_opportunity.why_it_matters }}</p>
+      </div>
+
+      <div class="journey-comparison">
+        <div class="journey-card current">
+          <div class="journey-card-header">Current Customer Journey</div>
+          <div class="journey-flow">{{ audit.top_opportunity.current_journey }}</div>
+        </div>
+
+        <div class="journey-card improved">
+          <div class="journey-card-header">Engineered Growth Journey</div>
+          <div class="journey-flow">{{ audit.top_opportunity.improved_journey }}</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span>OneHive Technologies</span>
+        <span class="footer-tagline">· Build. Automate. Grow.</span>
+      </div>
+      <div class="page-number">3 / 5</div>
+    </footer>
+  </section>
+
+  <!-- ================= PAGE 4: OUR RECOMMENDED SOLUTION ================= -->
+  <section class="page page-4">
+    <header class="page-header">
+      <div class="header-brand">
+        {% if logo_base64 %}
+          <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo">
+        {% endif %}
+        <span class="header-doc-title">Digital Presence Intelligence</span>
+      </div>
+      <div class="header-meta">{{ audit.business.name }}</div>
+    </header>
+
+    <div class="page-content">
+      <div class="section-headline">
+        <div class="section-label">Tailored Treatment Plan</div>
+        <h2 class="section-title">Our Recommended Solution</h2>
+      </div>
+
+      <div class="pillars-container">
+        {% for rec in audit.recommendations %}
+        <div class="pillar-card">
+          <div class="pillar-number-circle">0{{ rec.order }}</div>
+          <div class="pillar-content">
+            <div class="pillar-category">{{ rec.category }}</div>
+            <div class="pillar-title">{{ rec.title }}</div>
+            <div class="pillar-desc">{{ rec.description }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- What This Could Look Like Teaser (preserves exact 5-page layout) -->
+      <div class="concept-teaser-box">
+        <div class="concept-teaser-header">
+          <span class="concept-badge">CONCEPT TEASER</span>
+          <span style="font-size: 11px; color: #FFB800; font-weight: 700;">Personalized Preview</span>
+        </div>
+        <div class="concept-teaser-preview">
+          <div class="concept-preview-info">
+            <h5>{{ audit.business.name }} — Digital Concept</h5>
+            <p>High-converting mobile & desktop experience designed to capture active local enquiries.</p>
+          </div>
+          <span class="concept-cta-pill">View in Growth Pack</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span>OneHive Technologies</span>
+        <span class="footer-tagline">· Build. Automate. Grow.</span>
+      </div>
+      <div class="page-number">4 / 5</div>
+    </footer>
+  </section>
+
+  <!-- ================= PAGE 5: LET'S TURN INSIGHTS INTO IMPACT ================= -->
+  <section class="page page-5">
+    <header class="page-header">
+      <div class="header-brand">
+        {% if logo_base64 %}
+          <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo">
+        {% endif %}
+        <span class="header-doc-title">Digital Presence Intelligence</span>
+      </div>
+      <div class="header-meta">{{ audit.business.name }}</div>
+    </header>
+
+    <div class="page-content">
+      <div class="section-headline">
+        <div class="section-label">Next Steps</div>
+        <h2 class="section-title">Let's Turn Insights Into Impact</h2>
+      </div>
+
+      <div class="consultation-card">
+        <span class="consultation-badge">COMPLIMENTARY STRATEGY SESSION</span>
+        <h3 class="consultation-headline">30-Minute Growth Walkthrough</h3>
+        <p class="consultation-sub">
+          We invite you to a personalized briefing with our growth engineers to review these findings in detail and explore the live implementation prototype tailored for {{ audit.business.name }}.
+        </p>
+
+        <div class="inclusions-grid">
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>Comprehensive findings review</span>
+          </div>
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>Live solution demonstration</span>
+          </div>
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>Tailored conversion roadmap</span>
+          </div>
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>Interactive website concept</span>
+          </div>
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>WhatsApp & automation flow</span>
+          </div>
+          <div class="inclusion-item">
+            <span class="inclusion-check">✓</span>
+            <span>Zero sales pressure or obligation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="closing-brand-card">
+        <div class="closing-left">
+          <h3>ONEHIVE TECHNOLOGIES</h3>
+          <div class="closing-tagline">Build. Automate. Grow.</div>
+          <div class="closing-triad">More Visibility. More Enquiries. More Growth.</div>
+        </div>
+
+        <div class="closing-right">
+          <div class="contact-pill web">www.onehivetech.com</div>
+          <div class="contact-pill">hello@onehivetech.com</div>
+          <div class="contact-pill">+91 98450 12345</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span>OneHive Technologies</span>
+        <span class="footer-tagline">· Build. Automate. Grow.</span>
+      </div>
+      <div class="page-number">5 / 5</div>
+    </footer>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "page": 5,
+  "name": "What You're Doing Well",
+  "section_number": "04",
+  "title": "What You're Doing Well",
+  "subtitle": "These are your key strengths based on our analysis.",
+  "components": {
+    "strength_cards": [
+      {
+        "title": "Strong Customer Reputation",
+        "icon": "star",
+        "color": "green"
+      },
+      {
+        "title": "Visual Portfolio",
+        "icon": "gallery",
+        "color": "green"
+      },
+      {
+        "title": "Active Social Presence",
+        "icon": "users",
+        "color": "green"
+      },
+      {
+        "title": "Clear Brand Positioning",
+        "icon": "target",
+        "color": "green"
+      }
+    ],
+    "bottom_card": {
+      "quote_symbol": "\u201c",
+      "text": "You've already built a strong foundation. Now it's time to convert that attention into real enquiries."
+    }
+  }
+}

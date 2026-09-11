@@ -1,0 +1,234 @@
+{% from "icons.html" import svg_icon %}
+
+<div class="page page-2" id="page-2">
+  <div class="page-inner">
+    
+    <!-- Header Bar -->
+    <header class="header-bar">
+      <div class="brand-group">
+        {{ svg_icon('bee_logo', extra_class='brand-bee', size=38) }}
+        <div class="brand-text">
+          <div class="brand-name">OneHive <span class="brand-sub">Technologies</span></div>
+          <div class="brand-tagline">Build. Automate. Grow.</div>
+        </div>
+      </div>
+      <div class="report-meta-group">
+        <div class="meta-label">Digital Presence Intelligence Report</div>
+        <div class="meta-client-name">{{ p.business_name }}</div>
+      </div>
+    </header>
+
+    <!-- Section Title Bar with Number 02 Badge -->
+    <div class="opportunity-header-bar">
+      <div class="num-badge-yellow">02</div>
+      <div class="opp-title-group">
+        <h1 class="opp-main-heading">Your Growth Opportunity</h1>
+        <p class="opp-sub-heading">{{ p.subheading_p2 }}</p>
+      </div>
+    </div>
+
+    <!-- High Priority Hero Alert Card -->
+    <div class="hero-opp-card">
+      <div class="hero-opp-alert-icon">
+        {{ svg_icon('alert_triangle_solid', size=46) }}
+      </div>
+      <div class="hero-opp-text-box">
+        <div class="hero-opp-pill-row">
+          <span class="high-priority-pill">HIGH PRIORITY</span>
+        </div>
+        <h2 class="hero-opp-title">{{ p.opp_title }}</h2>
+        <p class="hero-opp-desc">{{ p.opp_desc }}</p>
+      </div>
+      <div class="hero-opp-target-badge">
+        {{ svg_icon('target', size=28, color='#DC2626') }}
+      </div>
+    </div>
+
+    <!-- Section: Why This Opportunity Matters -->
+    <div class="matters-section">
+      <div class="section-title-bar">
+        <h2 class="section-title">Why This Opportunity Matters</h2>
+      </div>
+      <div class="matters-cards-grid">
+        {% for card in p.why_matters %}
+        <div class="matter-card matter-{{ card.theme }}">
+          <div class="matter-icon-box">
+            {% if card.theme == 'green' %}
+              {{ svg_icon(card.icon, size=22, color='#16A34A') }}
+            {% elif card.theme == 'blue' %}
+              {{ svg_icon(card.icon, size=22, color='#2563EB') }}
+            {% else %}
+              {{ svg_icon(card.icon, size=22, color='#9333EA') }}
+            {% endif %}
+          </div>
+          <div class="matter-title">{{ card.title }}</div>
+          <p class="matter-desc">{{ card.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Section: Customer Journey Analysis (Side-by-Side Comparison) -->
+    <div class="journey-section">
+      <div class="section-title-bar">
+        <h2 class="section-title">Customer Journey Analysis</h2>
+      </div>
+      <div class="journey-split-grid">
+        
+        <!-- Left Column: Current Journey (Observed) -->
+        <div class="journey-card current-journey-card">
+          <div class="journey-card-header current-header">
+            <span>Current Journey (Observed)</span>
+          </div>
+          <div class="journey-steps-list">
+            {% for step in p.current_journey_steps %}
+            <div class="journey-step-item {% if step.is_alert %}alert-step-item{% endif %}">
+              <div class="step-icon-circle {{ step.circle_class }}">
+                {{ svg_icon(step.icon, size=16, color=step.icon_color) }}
+              </div>
+              <div class="step-text-box">
+                <div class="step-title {% if step.is_alert %}red-text{% endif %}">{{ step.title }}</div>
+                <div class="step-desc">{{ step.desc }}</div>
+              </div>
+            </div>
+            {% if not loop.last %}
+            <div class="journey-arrow-row">
+              {{ svg_icon('arrow_down', size=14, color='#94A3B8') }}
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Right Column: Recommended Journey (Proposed) -->
+        <div class="journey-card recommended-journey-card">
+          <div class="journey-card-header recommended-header">
+            <span>Recommended Journey (Proposed)</span>
+          </div>
+          <div class="journey-steps-list">
+            {% for step in p.recommended_journey_steps %}
+            <div class="journey-step-item {% if step.is_success %}success-step-item{% endif %}">
+              <div class="step-icon-circle {{ step.circle_class }}">
+                {{ svg_icon(step.icon, size=16, color=step.icon_color) }}
+              </div>
+              <div class="step-text-box">
+                <div class="step-title {% if step.is_success %}green-text{% endif %}">{{ step.title }}</div>
+                <div class="step-desc">{{ step.desc }}</div>
+              </div>
+            </div>
+            {% if not loop.last %}
+            <div class="journey-arrow-row">
+              {{ svg_icon('arrow_down', size=14, color='#94A3B8') }}
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section: What OneHive Recommends -->
+    <div class="recommends-section">
+      <div class="section-title-bar">
+        <h2 class="section-title">What OneHive Recommends</h2>
+      </div>
+      <div class="first-move-hero-card">
+        <div class="first-move-icon-box">
+          {{ svg_icon('monitor', size=26, color='#101828') }}
+        </div>
+        <div class="first-move-text-box">
+          <h3 class="first-move-title">{{ p.first_move }}</h3>
+          <p class="first-move-desc">{{ p.first_move_desc }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Additional Opportunities -->
+    <div class="additional-opps-section">
+      <div class="section-title-bar">
+        <h2 class="section-title">Additional Opportunities</h2>
+      </div>
+      <div class="additional-opps-grid">
+        {% for card in p.additional_opps %}
+        <div class="add-opp-card">
+          <div class="add-opp-icon-box {{ card.bg_class }}">
+            {{ svg_icon(card.icon, size=17, color=card.color) }}
+          </div>
+          <div class="add-opp-info">
+            <div class="add-opp-title">{{ card.title }}</div>
+            <div class="add-opp-desc">{{ card.desc }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Dark Closing CTA Banner -->
+    <div class="closing-cta-card">
+      <div class="cta-bg-hexagons" aria-hidden="true">
+        <svg width="220" height="110" viewBox="0 0 220 110" fill="none">
+          <polygon points="170,15 195,30 195,60 170,75 145,60 145,30" fill="#FFBF00" fill-opacity="0.9"/>
+          <polygon points="205,50 225,62 225,86 205,98 185,86 185,62" fill="#F59E0B" fill-opacity="0.5"/>
+          <polygon points="135,55 155,67 155,91 135,103 115,91 115,67" fill="#FEF08A" fill-opacity="0.4"/>
+        </svg>
+      </div>
+
+      <div class="cta-content-wrapper">
+        <h2 class="cta-heading">Ready to unlock your full potential?</h2>
+        <p class="cta-desc">{{ p.cta_text }}</p>
+        <div class="cta-btn-row">
+          <span class="cta-yellow-button">Schedule a Free Consultation &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Capability Strip & Contact Row -->
+    <div class="capabilities-contact-row">
+      <div class="capabilities-strip">
+        <div class="cap-item">
+          {{ svg_icon('monitor', size=16, color='#101828') }}
+          <span>Website Development</span>
+        </div>
+        <div class="cap-item">
+          {{ svg_icon('sparkles', size=16, color='#101828') }}
+          <span>AI Automation</span>
+        </div>
+        <div class="cap-item">
+          {{ svg_icon('send', size=16, color='#101828') }}
+          <span>Digital Marketing</span>
+        </div>
+        <div class="cap-item">
+          {{ svg_icon('support', size=16, color='#101828') }}
+          <span>Ongoing Support</span>
+        </div>
+      </div>
+
+      <div class="contact-info-block">
+        <div class="contact-row">{{ svg_icon('phone', size=13, color='#475569') }} <span>{{ p.onehive_phone }}</span></div>
+        <div class="contact-row">{{ svg_icon('mail', size=13, color='#475569') }} <span>{{ p.onehive_email }}</span></div>
+        <div class="contact-row">{{ svg_icon('globe', size=13, color='#475569') }} <span>{{ p.onehive_website }}</span></div>
+      </div>
+    </div>
+
+    <!-- Cursive Tagline & Social Icons Row -->
+    <div class="tagline-socials-row">
+      <div class="cursive-tagline">
+        Better Presence.<br/>Bigger Possibilities:
+      </div>
+      <div class="social-icons-group">
+        {{ svg_icon('linkedin', size=22, extra_class='social-icon') }}
+        {{ svg_icon('instagram', size=22, color='#E1306C', extra_class='social-icon') }}
+        {{ svg_icon('youtube', size=24, extra_class='social-icon') }}
+      </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+      <div class="footer-left">www.onehive.in</div>
+      <div class="footer-center">Build. Automate. Grow.</div>
+      <div class="footer-right">Page 2 of 2</div>
+    </footer>
+
+  </div>
+</div>

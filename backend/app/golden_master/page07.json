@@ -1,0 +1,76 @@
+{
+  "page": 7,
+  "name": "Customer Journey Analysis",
+  "section_number": "06",
+  "title": "Customer Journey Analysis",
+  "subtitle": "Here's how potential customers currently discover and interact with your business.",
+  "components": {
+    "comparison_columns": {
+      "current_journey": {
+        "title": "Current Journey",
+        "steps": [
+          {
+            "title": "Google Search",
+            "desc": "Discover your business",
+            "icon": "search"
+          },
+          {
+            "title": "View Instagram/Google",
+            "desc": "See your work and reviews",
+            "icon": "phone"
+          },
+          {
+            "title": "Look for more details",
+            "desc": "Limited information available",
+            "icon": "eye"
+          },
+          {
+            "title": "Get in touch",
+            "desc": "No clear enquiry journey",
+            "icon": "cross"
+          },
+          {
+            "title": "Potential customer leaves",
+            "desc": "High drop-off",
+            "icon": "alert"
+          }
+        ]
+      },
+      "recommended_journey": {
+        "title": "Recommended Journey",
+        "steps": [
+          {
+            "title": "Google Instagram",
+            "desc": "Discover your business",
+            "icon": "search"
+          },
+          {
+            "title": "Visit your website",
+            "desc": "Explore projects and services",
+            "icon": "phone"
+          },
+          {
+            "title": "Build trust",
+            "desc": "View testimonials and credentials",
+            "icon": "target"
+          },
+          {
+            "title": "Enquire via WhatsApp/Form",
+            "desc": "Quick and easy contact",
+            "icon": "whatsapp"
+          },
+          {
+            "title": "Lead captured",
+            "desc": "You get a new enquiry",
+            "icon": "check"
+          }
+        ]
+      }
+    },
+    "bottom_card": {
+      "icon": "barchart",
+      "color": "yellow",
+      "text": "A clear digital journey can turn more visitors into real customers."
+    }
+  }
+}

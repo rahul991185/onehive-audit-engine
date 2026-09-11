@@ -1,0 +1,113 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 5: 04 WHAT YOU'RE DOING WELL ================= -->
+<section class="page page-5">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">04</div>
+      <div>
+        <h2 class="section-main-heading">WHAT YOU'RE DOING WELL</h2>
+        <p class="section-sub-heading">These are your key strengths based on our analysis.</p>
+      </div>
+    </div>
+
+    <!-- 4 Full-Width Green Strength Cards -->
+    <div class="strengths-vertical-list">
+      <!-- 1. Strong Customer Reputation -->
+      <div class="strength-card green">
+        <div class="strength-icon-box green">
+          {{ svg_icon('star') }}
+        </div>
+        <div class="strength-content-wrap">
+          <div class="strength-card-header">
+            <h3 class="strength-title">Strong Customer Reputation</h3>
+            <span class="strength-badge green">{{ svg_icon('check') }} VERIFIED STRENGTH</span>
+          </div>
+          <p class="strength-desc">
+            {% if identity.rating %}
+              Your {{ identity.rating }}★ rating across {{ identity.review_count or 100 }}+ public customer reviews demonstrates outstanding service quality and authentic word-of-mouth credibility in your market.
+            {% else %}
+              Strong customer sentiment and authentic client recommendations validate your business credibility and dependable community standing.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Visual Portfolio & Work Demonstration -->
+      <div class="strength-card green">
+        <div class="strength-icon-box green">
+          {{ svg_icon('gallery') }}
+        </div>
+        <div class="strength-content-wrap">
+          <div class="strength-card-header">
+            <h3 class="strength-title">Visual Portfolio & Showcase</h3>
+            <span class="strength-badge green">{{ svg_icon('check') }} VERIFIED STRENGTH</span>
+          </div>
+          <p class="strength-desc">
+            You possess compelling real-world project visuals and proof of work that immediately communicate your high standard of craftsmanship to prospective clients.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Active Community & Social Presence -->
+      <div class="strength-card green">
+        <div class="strength-icon-box green">
+          {{ svg_icon('users') }}
+        </div>
+        <div class="strength-content-wrap">
+          <div class="strength-card-header">
+            <h3 class="strength-title">Established Community Presence</h3>
+            <span class="strength-badge green">{{ svg_icon('check') }} VERIFIED STRENGTH</span>
+          </div>
+          <p class="strength-desc">
+            {% if identity.instagram or (identity.social_presence and identity.social_presence > 5) %}
+              Active social and local search engagement allows prospective clients to discover your business organically and observe your ongoing client engagements.
+            {% else %}
+              Consistent local directory presence and verified business location ensure steady organic brand discovery across regional maps and search queries.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. Clear Brand Positioning -->
+      <div class="strength-card green">
+        <div class="strength-icon-box green">
+          {{ svg_icon('target') }}
+        </div>
+        <div class="strength-content-wrap">
+          <div class="strength-card-header">
+            <h3 class="strength-title">Clear Brand Positioning</h3>
+            <span class="strength-badge green">{{ svg_icon('check') }} VERIFIED STRENGTH</span>
+          </div>
+          <p class="strength-desc">
+            Your specialized expertise as {{ identity.category or 'an established market leader' }} differentiates you clearly from generic competitors, giving prospects a strong reason to choose you.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Positioning Quote Card -->
+    <div class="quote-callout-card">
+      <div class="quote-mark-icon">“</div>
+      <div class="quote-body-text">
+        You've already built a strong foundation. Now it's time to convert that attention into real enquiries.
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 5</div>
+  </footer>
+</section>

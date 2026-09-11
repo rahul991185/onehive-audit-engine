@@ -1,0 +1,32 @@
+{
+  "page": 3,
+  "name": "About Your Business",
+  "section_number": "02",
+  "title": "About Your Business",
+  "subtitle": "Here's what we found about your business based on our research.",
+  "components": {
+    "business_image": {
+      "aspect": "1:1",
+      "radius": 16
+    },
+    "business_info_card": {
+      "fields": [
+        "name",
+        "category",
+        "location",
+        "rating_reviews",
+        "instagram",
+        "website",
+        "phone"
+      ]
+    },
+    "services_section": {
+      "heading": "Your Services (as identified)",
+      "card_count": 5,
+      "card_layout": "horizontal_grid"
+    },
+    "positioning_box": {
+      "text": "Creating beautiful spaces for a better tomorrow."
+    }
+  }
+}

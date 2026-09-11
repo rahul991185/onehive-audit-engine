@@ -1,0 +1,95 @@
+{% from "master/icons.html" import svg_icon %}
+<!-- ================= PAGE 6: 05 YOUR #1 OPPORTUNITY ================= -->
+<section class="page page-6">
+  <header class="page-header">
+    <div class="header-brand-wrap">
+      {% if logo_base64 %}
+        <img src="{{ logo_base64 }}" alt="OneHive" class="header-logo-icon">
+      {% endif %}
+      <span class="header-doc-label">DIGITAL PRESENCE INTELLIGENCE REPORT</span>
+    </div>
+    <div class="header-client-pill">{{ identity.business_name }}</div>
+  </header>
+
+  <div class="page-content-area">
+    <!-- Section Numbered Marker Group -->
+    <div class="section-title-group">
+      <div class="section-num-circle">05</div>
+      <div>
+        <h2 class="section-main-heading">YOUR #1 OPPORTUNITY</h2>
+        <p class="section-sub-heading">The most important area to focus on right now.</p>
+      </div>
+    </div>
+
+    <!-- Top Hero Opportunity Card (Light Coral/Pink background with Red Accent) -->
+    <div class="opportunity-hero-card">
+      <div class="opp-top-row">
+        <div class="opp-icon-circle red">
+          {{ svg_icon('warning') }}
+        </div>
+        <span class="opp-priority-pill">HIGH PRIORITY</span>
+      </div>
+      <h3 class="opp-main-headline">
+        {% if opportunity and opportunity.headline %}
+          {{ opportunity.headline }}
+        {% else %}
+          Turn your existing reputation and portfolio into a stronger enquiry system.
+        {% endif %}
+      </h3>
+      <p class="opp-body-text">
+        {% if opportunity and opportunity.body %}
+          {{ opportunity.body }}
+        {% else %}
+          You have strong brand value and an impressive portfolio, but the path from someone discovering your business to contacting you isn't clear or structured enough.
+        {% endif %}
+      </p>
+    </div>
+
+    <!-- Middle Card: Why This Matters with 3 Purple Checkmark Items -->
+    <div class="why-it-matters-card">
+      <h3 class="why-matters-title">Why This Matters</h3>
+      <div class="why-matters-list">
+        <div class="why-matter-item">
+          <div class="why-icon-badge purple">
+            {{ svg_icon('check') }}
+          </div>
+          <div class="why-text">
+            <strong>Lost Interest & Drop-off:</strong> Potential customers may view your work on social media or search but never take the next step without a dedicated destination.
+          </div>
+        </div>
+
+        <div class="why-matter-item">
+          <div class="why-icon-badge purple">
+            {{ svg_icon('check') }}
+          </div>
+          <div class="why-text">
+            <strong>Friction Reduces Enquiries:</strong> Every additional step or lack of immediate WhatsApp booking creates friction and reduces high-intent client contacts.
+          </div>
+        </div>
+
+        <div class="why-matter-item">
+          <div class="why-icon-badge purple">
+            {{ svg_icon('check') }}
+          </div>
+          <div class="why-text">
+            <strong>Accelerated Monthly Revenue:</strong> A streamlined digital journey directly turns passive search impressions into verified client consultations and revenue.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Quote Box -->
+    <div class="quote-callout-card">
+      <div class="quote-mark-icon">“</div>
+      <div class="quote-body-text">
+        Great work deserves to be experienced. Let's make it effortless for your next customer to find you and get in touch.
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-website-link">www.onehive.in</div>
+    <div class="footer-motto-tag">Build. Automate. Grow.</div>
+    <div class="footer-page-idx">Page 6</div>
+  </footer>
+</section>

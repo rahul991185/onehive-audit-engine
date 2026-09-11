@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ concept.business_name }} — Personalized Website Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: {{ concept.brand_colors.primary or '#FFC400' }};
+      --dark: #101828;
+      --navy: #0B0F19;
+      --card-bg: #FFFFFF;
+      --text-dark: #1D2939;
+      --text-muted: #64748B;
+      --bg-light: #F8FAFC;
+      --border: #E2E8F0;
+      --green: #10B981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #FFFFFF;
+      color: var(--text-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Top Concept Disclaimer Bar */
+    .concept-disclaimer {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 10px 48px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .concept-tag {
+      background: var(--primary);
+      color: #111111;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+    .nav-brand span { color: #D97706; }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .nav-cta {
+      background: var(--primary);
+      color: #111111;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(255, 196, 0, 0.25);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 64px 48px 56px 48px;
+      background: radial-gradient(circle at top right, rgba(255, 196, 0, 0.09), transparent 65%), #FFFFFF;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #D97706;
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.16;
+      color: var(--dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 540px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .btn-hero-primary {
+      background: #10B981;
+      color: #FFFFFF;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.28);
+    }
+    .btn-hero-secondary {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--dark);
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Hero Right Visual Card */
+    .hero-visual-container {
+      position: relative;
+    }
+    .hero-photo-card {
+      width: 100%;
+      height: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px -12px rgba(16, 24, 40, 0.15);
+      position: relative;
+      background: #1E293B;
+    }
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(to top, rgba(16, 24, 40, 0.88), transparent);
+      color: #FFFFFF;
+    }
+    .hero-photo-tag {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+    .hero-photo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .hero-mockup-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    }
+    .visual-metric-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 8px;
+    }
+    .visual-metric-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .visual-metric-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-top: 4px;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-around;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .trust-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Section Layouts */
+    .content-section {
+      padding: 56px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-section:last-of-type { border-bottom: none; }
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 36px auto;
+    }
+    .section-head h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+    .section-head p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .service-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: #D97706;
+      margin-bottom: 8px;
+    }
+    .service-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .service-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Highlights / Why Choose Grid */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .highlight-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .highlight-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .highlight-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .highlight-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Process / Steps Grid */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .process-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
+    }
+    .process-step-pill {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .process-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .process-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Location & Contact Strip */
+    .contact-card-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-card-info h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .contact-card-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Final CTA Banner */
+    .cta-banner {
+      background: var(--dark);
+      color: #FFFFFF;
+      padding: 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .cta-banner h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .cta-banner p {
+      font-size: 14px;
+      color: #98A2B3;
+      max-width: 500px;
+    }
+
+    /* Mobile Responsive View (390px) */
+    @media (max-width: 800px) {
+      .concept-disclaimer { padding: 8px 16px; font-size: 10px; }
+      .navbar { padding: 14px 18px; }
+      .nav-links { display: none; }
+      .nav-brand { font-size: 18px; }
+      .nav-cta { padding: 8px 14px; font-size: 12px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 32px 18px 28px 18px;
+        gap: 28px;
+      }
+      .hero-title { font-size: 28px; }
+      .hero-sub { font-size: 14px; margin-bottom: 20px; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+      .btn-hero-primary, .btn-hero-secondary { text-align: center; justify-content: center; }
+
+      .hero-photo-card { height: 220px; }
+
+      .trust-strip {
+        padding: 16px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .content-section { padding: 36px 18px; }
+      .section-head h3 { font-size: 22px; }
+      .services-grid, .highlights-grid, .process-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .contact-card-box {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px;
+      }
+      .cta-banner { padding: 36px 18px; }
+      .cta-banner h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="concept-disclaimer">
+    <div style="display: flex; align-items: center;">
+      <span class="concept-tag">Visual Concept</span>
+      <span>Personalized Website Preview engineered by OneHive Technologies</span>
+    </div>
+    <span>{{ concept.location }}</span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      {{ concept.business_name }}
+    </div>
+    <ul class="nav-links">
+      <li>Overview</li>
+      <li>Services</li>
+      <li>Why Choose Us</li>
+      <li>Contact</li>
+    </ul>
+    <a href="{{ concept.whatsapp_cta }}" class="nav-cta">WhatsApp Enquiry</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>{{ concept.industry }}</span>
+      </div>
+      <h1 class="hero-title">{{ concept.headline }}</h1>
+      <p class="hero-sub">{{ concept.subheadline }}</p>
+
+      <div class="hero-actions">
+        <a href="{{ concept.whatsapp_cta }}" class="btn-hero-primary">
+          <span>💬</span>
+          <span>{{ concept.primary_cta }}</span>
+        </a>
+        <a href="#services-view" class="btn-hero-secondary">{{ concept.secondary_cta }}</a>
+      </div>
+    </div>
+
+    <div class="hero-visual-container">
+      {% if concept.hero_image_url %}
+        <div class="hero-photo-card">
+          <img src="{{ concept.hero_image_url }}" alt="{{ concept.business_name }}" class="hero-photo-img">
+          <div class="hero-photo-overlay">
+            <div class="hero-photo-tag">Public Business Profile Visual</div>
+            <div class="hero-photo-name">{{ concept.business_name }}</div>
+          </div>
+        </div>
+      {% else %}
+        <div class="hero-mockup-card">
+          <div class="visual-metric-box">
+            <div class="visual-metric-title">Direct Inbound Journey</div>
+            <div class="visual-metric-val">1-Click WhatsApp Booking</div>
+          </div>
+          <div class="visual-metric-box" style="border-left-color: #10B981;">
+            <div class="visual-metric-title">Verified Location</div>
+            <div class="visual-metric-val">{{ concept.location }}</div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    {% for signal in concept.trust_signals %}
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      <span>{{ signal }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Dynamic Industry Sections -->
+  {% for sec in concept.sections %}
+    {% if sec.type == 'services' %}
+      <section class="content-section" id="services-view">
+        <div class="section-head">
+          <h3>{{ sec.title }}</h3>
+          <p>{{ sec.subtitle }}</p>
+        </div>
+        <div class="services-grid">
+          {% for svc in sec['items'] %}
+          <div class="service-card">
+            <div class="service-num">0{{ loop.index }}</div>
+            <h4 class="service-title">{{ svc.name }}</h4>
+            <p class="service-desc">{{ svc.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    {% elif sec.type == 'highlights' %}
+      <section class="content-section">
+        <div class="section-head">
+          <h3>{{ sec.title }}</h3>
+          <p>{{ sec.subtitle }}</p>
+        </div>
+        <div class="highlights-grid">
+          {% for item in sec['items'] %}
+          <div class="highlight-card">
+            <div class="highlight-badge">✓</div>
+            <h4 class="highlight-title">{{ item.title }}</h4>
+            <p class="highlight-desc">{{ item.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    {% elif sec.type == 'process' %}
+      <section class="content-section">
+        <div class="section-head">
+          <h3>{{ sec.title }}</h3>
+          <p>{{ sec.subtitle }}</p>
+        </div>
+        <div class="process-grid">
+          {% for step in sec['items'] %}
+          <div class="process-card">
+            <div class="process-step-pill">STAGE {{ step.step }}</div>
+            <h4 class="process-title">{{ step.title }}</h4>
+            <p class="process-desc">{{ step.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    {% elif sec.type == 'portfolio' %}
+      <section class="content-section">
+        <div class="section-head">
+          <h3>{{ sec.title }}</h3>
+          <p>{{ sec.subtitle }}</p>
+        </div>
+        <div class="highlights-grid">
+          {% for proj in sec['items'] %}
+          <div class="highlight-card">
+            <div style="font-size: 11px; font-weight: 800; color: #D97706; text-transform: uppercase; margin-bottom: 6px;">{{ proj.category }}</div>
+            <h4 class="highlight-title">{{ proj.title }}</h4>
+            <p class="highlight-desc">{{ proj.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    {% elif sec.type == 'contact_strip' %}
+      <section class="content-section">
+        <div class="contact-card-box">
+          <div class="contact-card-info">
+            <h4>{{ sec.title }}</h4>
+            <p>{{ sec.address }} • {{ sec.phone }}</p>
+          </div>
+          <a href="{{ concept.whatsapp_cta }}" class="btn-hero-primary" style="padding: 10px 20px; font-size: 13px;">
+            Book on WhatsApp
+          </a>
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  <!-- Final CTA Banner -->
+  <footer class="cta-banner">
+    <h2>{{ concept.final_cta }}</h2>
+    <p>A modern, high-conversion digital destination designed for interested clients in {{ concept.location }}.</p>
+    <a href="{{ concept.whatsapp_cta }}" class="btn-hero-primary" style="margin-top: 8px;">
+      <span>💬</span>
+      <span>Enquire on WhatsApp</span>
+    </a>
+  </footer>
+
+</body>
+</html>
