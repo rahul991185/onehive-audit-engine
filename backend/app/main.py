@@ -25,6 +25,8 @@ app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 # API routes
 app.include_router(api_router, prefix="/api")
 
+@app.get("/healthz")
+@app.get("/health")
 @app.get("/api/health")
 async def health_check():
     return {

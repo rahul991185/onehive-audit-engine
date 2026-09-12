@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: onehive-audit-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: 8050
+      - key: APP_ENV
+        value: production
+      - key: AI_PROVIDER
+        value: deterministic
+      - key: DATABASE_URL
+        value: sqlite:///./storage/onehive.db

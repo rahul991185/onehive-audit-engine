@@ -96,8 +96,21 @@ export default function Home() {
       });
 
       if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.detail || 'Business identification could not be verified from this URL. Please check the URL.');
+        let errorDetail = '';
+        try {
+          const errData = await res.json();
+          errorDetail = errData.detail || errData.message || '';
+        } catch {
+          // Response is not JSON (e.g. HTML/plain text error page from Vercel/Render proxy)
+          if (res.status === 404) {
+            errorDetail = 'Backend API route not found (404). Please ensure BACKEND_API_URL is configured in your Vercel project settings.';
+          } else if (res.status === 502 || res.status === 503 || res.status === 504) {
+            errorDetail = 'Backend service is starting up on Render (free tier cold starts take ~40 seconds). Please retry in 30 seconds.';
+          } else {
+            errorDetail = `Server connection returned status ${res.status} (${res.statusText || 'Error'}).`;
+          }
+        }
+        throw new Error(errorDetail || 'Business identification could not be verified from this URL. Please check the URL.');
       }
 
       const result = await res.json();
@@ -226,13 +239,19 @@ export default function Home() {
             isLoading={isLoading} 
           />
 
-          {/* Error Message if verification fails */}
+          {/* Error Message if verification or service connection fails */}
           {errorMessage && (
             <div className="error-banner-container">
-              <div className="error-title">Business Verification Notice</div>
+              <div className="error-title">
+                {errorMessage.toLowerCase().includes("backend") || errorMessage.toLowerCase().includes("server") || errorMessage.toLowerCase().includes("status")
+                  ? "Backend Service Notice"
+                  : "Business Verification Notice"}
+              </div>
               <div className="error-desc">{errorMessage}</div>
               <div className="error-helper-note">
-                Try: full Google Maps place URL, business homepage, Instagram profile, or Facebook page.
+                {errorMessage.toLowerCase().includes("backend") || errorMessage.toLowerCase().includes("server") || errorMessage.toLowerCase().includes("status")
+                  ? "Tip: Render free tier services automatically sleep after inactivity and need ~40 seconds to wake up."
+                  : "Try: full Google Maps place URL, business homepage, Instagram profile, or Facebook page."}
               </div>
             </div>
           )}

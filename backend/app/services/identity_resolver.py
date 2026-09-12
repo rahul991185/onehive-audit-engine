@@ -85,6 +85,13 @@ class IdentityResolver:
         elif source_type == SourceType.INSTAGRAM:
             identity, insta_evidence = SocialAdapters.resolve_instagram(url)
             all_evidence.extend(insta_evidence)
+            if identity and identity.tagline:
+                import re
+                parts = [s.strip(" •|,\n\r\t-") for s in re.split(r"[•|,|\n]", identity.tagline) if len(s.strip(" •|,\n\r\t-")) >= 4]
+                # Filter out obvious city/generic names
+                services = [p for p in parts if not any(c.lower() in p.lower() for c in ["delhi", "mumbai", "india", "clinic", "client", "trusted", "global"])]
+                if services:
+                    extra_data["detected_services"] = services[:4]
             return identity, all_evidence, extra_data
 
         elif source_type == SourceType.FACEBOOK:

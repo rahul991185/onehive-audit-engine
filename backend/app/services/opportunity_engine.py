@@ -61,7 +61,18 @@ class OpportunityEngine:
         else:
             rep_asset = f"High verified customer trust with a {rating_str} rating on Google{rev_count_str}{loc_str}."
 
-        if has_high_rating:
+        # Check if business is social-first (Instagram / Facebook source)
+        is_social_first = identity.business_type == "SOCIAL_FIRST" or "instagram.com" in (identity.source_url or "") or "facebook.com" in (identity.source_url or "")
+
+        if is_social_first:
+            social_platform = "Instagram" if "instagram" in (identity.source_url or "").lower() else "Facebook"
+            aud_ev = [e for e in evidence if e.source in ["Instagram", "Facebook"] and "Audience" in e.field]
+            aud_val = aud_ev[0].value if aud_ev else None
+            if aud_val and "followers" in aud_val.lower():
+                strongest_asset = f"Active visual social presence on {social_platform} with verified audience proof ({aud_val}) and strong brand aesthetics."
+            else:
+                strongest_asset = f"Active visual content cadence and public engagement on {social_platform} under {name}."
+        elif has_high_rating:
             strongest_asset = rep_asset
         elif has_website and detected_services and len(detected_services) >= 2:
             strongest_asset = f"Active branded digital presence on {domain} showcasing core offerings ({', '.join(detected_services[:3])})."
@@ -83,8 +94,24 @@ class OpportunityEngine:
         # 2. OPPORTUNITY & RECOMMENDATIONS BY BUSINESS TYPE / VERTICAL
         # -------------------------------------------------------------
         
+        # S. SOCIAL-FIRST BUSINESSES (Instagram & Facebook Profiles without owned website)
+        if is_social_first and not has_website:
+            social_platform = "Instagram" if "instagram" in (identity.source_url or "").lower() else "Facebook"
+            biggest_gap = f"Absence of an owned portfolio & consultation booking destination in {name}'s {social_platform} bio."
+            opp_title = f"Convert {social_platform} Followers Into Direct Consultation Bookings"
+            finding = f"While {name} maintains active audience engagement on {social_platform}, profile visitors currently hit conversion friction—having to rely on delayed DMs or comments with no 1-click consultation booking or treatment showcase."
+            why_it_matters = f"Social media visitors make fast booking decisions. Inbound prospects waiting for manual DM replies frequently abandon intent or book with competing practices that offer instant booking links."
+            current_journey = f"Browse {social_platform} Feed → Send DM or Leave Comment → Inconvenient DM Delay / Unanswered Inquiry → Lost Consultation"
+            improved_journey = f"Browse {social_platform} Bio → Tap 1-Click Showcase Link → Mobile Treatment & Portfolio Menu → Instant WhatsApp Consultation Booking"
+            recommended_service = "Mobile Bio-Showcase Website + Direct WhatsApp Booking Funnel"
+            recs = [
+                Recommendation(order=1, category="BUILD", title="Dedicated Mobile Link-in-Bio Showcase Hub", description=f"Deploy a high-speed, mobile-optimized treatment & portfolio hub for {name} highlighting credentials, services, and visual proofs."),
+                Recommendation(order=2, category="CONVERT", title="Direct 1-Click WhatsApp Consultation Bridge", description="Replace manual DM delays with an automated WhatsApp consultation bridge for instant patient/client appointment booking."),
+                Recommendation(order=3, category="GROW", title="Story & Highlight Conversion Funnels", description="Integrate high-converting calls-to-action into profile highlights to convert passive followers into confirmed consultation inquiries.")
+            ]
+
         # A. DENTAL & ORAL HEALTHCARE
-        if any(k in category for k in ["dent", "implant", "teeth", "ortho", "smile"]):
+        elif any(k in category for k in ["dent", "implant", "teeth", "ortho", "smile"]):
             if not has_website:
                 biggest_gap = f"Absence of an owned digital destination for {name} to present clinical treatments and capture patient bookings."
                 opp_title = "Turn Local Search Discovery Into Direct Patient Consultation Bookings"

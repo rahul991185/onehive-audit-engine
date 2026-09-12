@@ -128,8 +128,20 @@ class PDFRenderer:
         }
 
         services, positioning_statement, first_move, first_move_desc = PDFRenderer.get_vertical_details(identity, scores)
+        
+        from app.services.report_v2_adapter import ReportV2Adapter
+        page_data = ReportV2Adapter.build_page_data(
+            audit_id=audit_id,
+            identity=identity,
+            scores=scores,
+            strongest_asset=strongest_asset,
+            biggest_gap=biggest_gap,
+            opp=opp,
+            recommendations=recommendations
+        )
 
         rendered_html = template.render(
+            p=page_data,
             identity=identity,
             scores=scores,
             norm_scores=norm_scores,
