@@ -221,3 +221,10 @@ class LeadProspectResponse(BaseModel):
     leads: List[LeadItem]
     csv_export_url: str
     webhook_synced: bool = False
+
+class BulkDeleteRequest(BaseModel):
+    lead_ids: List[str]
+
+class BulkStageUpdateRequest(BaseModel):
+    lead_ids: List[str]
+    stage: str

@@ -70,9 +70,9 @@ body {
 .app-container {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px 80px 24px;
+  padding: 0 28px 80px 28px;
 }
 
 /* Header */
@@ -1656,5 +1656,149 @@ body {
 .error-helper-note {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------------
+   SPACIOUS & PROFESSIONAL DASHBOARD STYLING (TABS 2 & 3)
+   ------------------------------------------------------------------ */
+
+/* Modern Custom Checkbox */
+.onehive-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  background: rgba(16, 24, 40, 0.6);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.18s ease;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.onehive-checkbox:hover {
+  border-color: #FFB800;
+  background: rgba(255, 184, 0, 0.08);
+  box-shadow: 0 0 8px rgba(255, 184, 0, 0.2);
+}
+
+.onehive-checkbox:checked {
+  background: #FFB800;
+  border-color: #FFB800;
+  box-shadow: 0 0 10px rgba(255, 184, 0, 0.35);
+}
+
+.onehive-checkbox:checked::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: solid #070A12;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+  display: block;
+}
+
+.onehive-checkbox:focus-visible {
+  outline: 2px solid rgba(255, 184, 0, 0.6);
+  outline-offset: 2px;
+}
+
+/* Floating Bulk Action Bar */
+.floating-bulk-bar {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: rgba(13, 18, 31, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 184, 0, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 184, 0, 0.2);
+  animation: slideUpFloating 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFloating {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.floating-bulk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #FFB800;
+  background: rgba(255, 184, 0, 0.12);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  letter-spacing: 0.2px;
+}
+
+/* Spacious Dashboard Lead Cards */
+.spacious-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.spacious-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.spacious-card.is-selected {
+  border-color: rgba(255, 184, 0, 0.6);
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.05) 0%, #131B2D 100%);
+  box-shadow: 0 0 0 1px rgba(255, 184, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Metric KPI Cards in Tab 2 */
+.spacious-metric-card {
+  background: linear-gradient(180deg, rgba(19, 27, 45, 0.9) 0%, rgba(13, 18, 31, 0.95) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.spacious-metric-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Pulse Animation for Live Scanning */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-subtle {
+  animation: subtlePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 

@@ -11,7 +11,8 @@ from fastapi.responses import FileResponse, PlainTextResponse, JSONResponse
 from app.models.schemas import (
     AuditRequest, AuditResponse, BusinessIdentity, AuditScore, Opportunity,
     WebsiteConcept, QuickWin, SalesBrief, Recommendation,
-    LeadProspectRequest, LeadItem, LeadProspectResponse, LeadUpdateRequest
+    LeadProspectRequest, LeadItem, LeadProspectResponse, LeadUpdateRequest,
+    BulkDeleteRequest, BulkStageUpdateRequest
 )
 from app.services.audit_orchestrator import AuditOrchestrator
 from app.services.lead_prospector_engine import LeadProspectorEngine
@@ -466,6 +467,29 @@ async def update_lead(lead_id: str, req: LeadUpdateRequest):
     )
     db.close()
     return item
+
+@router.post("/leads/bulk-delete")
+async def bulk_delete_leads(req: BulkDeleteRequest):
+    if not req.lead_ids:
+        return {"status": "deleted", "deleted_count": 0, "lead_ids": []}
+    db = SessionLocal()
+    deleted_count = db.query(LeadDB).filter(LeadDB.id.in_(req.lead_ids)).delete(synchronize_session=False)
+    db.commit()
+    db.close()
+    return {"status": "deleted", "deleted_count": deleted_count, "lead_ids": req.lead_ids}
+
+@router.post("/leads/bulk-stage")
+async def bulk_update_lead_stages(req: BulkStageUpdateRequest):
+    if not req.lead_ids:
+        return {"status": "updated", "updated_count": 0}
+    db = SessionLocal()
+    updated_count = db.query(LeadDB).filter(LeadDB.id.in_(req.lead_ids)).update(
+        {LeadDB.stage: req.stage},
+        synchronize_session=False
+    )
+    db.commit()
+    db.close()
+    return {"status": "updated", "updated_count": updated_count, "stage": req.stage}
 
 @router.delete("/leads/{lead_id}")
 async def delete_lead(lead_id: str):
