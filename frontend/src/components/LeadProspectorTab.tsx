@@ -106,6 +106,9 @@ export const LeadProspectorTab: React.FC<LeadProspectorTabProps> = ({ onViewAudi
     setIsSearching(true);
     setErrorMessage(null);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 20000);
+
     try {
       const res = await fetch('/api/leads/prospect', {
         method: 'POST',
@@ -115,12 +118,25 @@ export const LeadProspectorTab: React.FC<LeadProspectorTabProps> = ({ onViewAudi
           location: location.trim(),
           limit,
           webhook_url: webhookUrl.trim() || undefined
-        })
+        }),
+        signal: controller.signal
       });
 
       if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.detail || 'Failed to harvest business leads.');
+        let errorDetail = '';
+        try {
+          const errData = await res.json();
+          errorDetail = errData.detail || errData.message || '';
+        } catch {
+          if (res.status === 404) {
+            errorDetail = 'Lead Prospector API route not found (404). Please ensure BACKEND_API_URL is configured in Vercel.';
+          } else if (res.status === 502 || res.status === 503 || res.status === 504) {
+            errorDetail = 'Backend service is starting up on Render (free tier cold starts take ~40 seconds). Please retry in 30 seconds.';
+          } else {
+            errorDetail = `Server connection returned status ${res.status}.`;
+          }
+        }
+        throw new Error(errorDetail || 'Failed to harvest business leads.');
       }
 
       const data = await res.json();
@@ -131,8 +147,13 @@ export const LeadProspectorTab: React.FC<LeadProspectorTabProps> = ({ onViewAudi
         return [...data.leads, ...filteredPrev];
       });
     } catch (err: any) {
-      setErrorMessage(err.message || 'Error occurred while discovering business leads.');
+      if (err.name === 'AbortError') {
+        setErrorMessage('Lead harvesting timed out. If the backend is waking up on Render, please retry in 30 seconds.');
+      } else {
+        setErrorMessage(err.message || 'Error occurred while discovering business leads.');
+      }
     } finally {
+      clearTimeout(timeoutId);
       setIsSearching(false);
     }
   };
